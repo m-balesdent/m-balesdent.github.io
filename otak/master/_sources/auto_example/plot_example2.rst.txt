@@ -174,7 +174,7 @@ Example 2: Use of AK - IS on Non linear oscillator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.456 seconds)
+   **Total running time of the script:** ( 0 minutes  0.397 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example2.py:

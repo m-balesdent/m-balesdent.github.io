@@ -1,0 +1,92 @@
+:orphan:
+
+
+
+.. _sphx_glr_auto_example:
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Example 1: Use of AK- MCS on Four Branch function">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example1_thumb.png
+     :alt: Example 1: Use of AK- MCS on Four Branch function
+
+     :ref:`sphx_glr_auto_example_plot_example1.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/plot_example1
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Example 3: Use of AK - SS on four branch function">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example3_thumb.png
+     :alt: Example 3: Use of AK - SS on four branch function
+
+     :ref:`sphx_glr_auto_example_plot_example3.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/plot_example3
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Example 2: Use of AK - IS on Non linear oscillator">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example2_thumb.png
+     :alt: Example 2: Use of AK - IS on Non linear oscillator
+
+     :ref:`sphx_glr_auto_example_plot_example2.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/plot_example2
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-gallery
+
+
+  .. container:: sphx-glr-download sphx-glr-download-python
+
+    :download:`Download all examples in Python source code: auto_example_python.zip </auto_example/auto_example_python.zip>`
+
+
+
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
+
+    :download:`Download all examples in Jupyter notebooks: auto_example_jupyter.zip </auto_example/auto_example_jupyter.zip>`

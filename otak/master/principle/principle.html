@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principle of AK methods &mdash; ot-AK 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sg_gallery-rendered-html.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User manual" href="../user_manual/user_manual.html" />
+    <link rel="prev" title="ot-AK documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ot-AK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Principle of AK methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/user_manual.html">User manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ot-AK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Principle of AK methods</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/principle/principle.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="principle-of-ak-methods">
+<h1>Principle of AK methods<a class="headerlink" href="#principle-of-ak-methods" title="Permalink to this headline"></a></h1>
+<p>The reliability problem to solve is:
+<span class="math notranslate nohighlight">\(P_f = \mathbb{P}[g\left( \mathbf{X},\mathbf{d} \right) \leq T)]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is the input random vector of dimension <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(f_\mathbf{X}(\mathbf{x})\)</span>  its joint density probability function.
+<span class="math notranslate nohighlight">\(\mathbf{d}\)</span> is a deterministic vector, <span class="math notranslate nohighlight">\(g(\mathbf{X},\mathbf{d})\)</span> is the limit state function of the model.
+<span class="math notranslate nohighlight">\(D_f = \{\mathbf{X} \in \mathbb{R}^n \, \vert \, g(\mathbf{X},\mathbf{d}) \leq T\}\)</span> is the domain definition of the event to consider (failure). <span class="math notranslate nohighlight">\(g(\cdot) = 0\)</span> is called the limit state.</p>
+<p>The failure condition can also be <span class="math notranslate nohighlight">\(g(\mathbf{X},\mathbf{d})\geq T\)</span>.</p>
+<p>The probability of failure can be defined as follows :
+<span class="math notranslate nohighlight">\(P_f = \mathbb{P}[g(\mathbf{X},\mathbf{d})\leq T]=   \int_{D_f}  f_\mathbf{X}(\mathbf{x}) d\mathbf{x}\)</span></p>
+<p>This probability can also be written as :
+<span class="math notranslate nohighlight">\(P_f = \int_{\mathbb{R}^n}  \mathbf{1}_{ \left\{ g(\mathbf{X},\mathbf{d}) \leq T \right\} }f_\mathbf{X}(\mathbf{x}) d\mathbf{x}\)</span></p>
+<p>In case of rare event probability estimation, the surrogate model has to be accurate in the zones that are relevant to the failure probability estimation i.e. in the vicinity of failure threshold <span class="math notranslate nohighlight">\(T\)</span>
+and in the high probability content regions. The use of the exact function <span class="math notranslate nohighlight">\(g\)</span> and its surrogate <span class="math notranslate nohighlight">\(\hat{g}\)</span> in the probability calculation will lead to the same result if
+<span class="math notranslate nohighlight">\(\forall \mathbf{x} \in \mathbb{R}^d, \mathbf{1}_{g(\mathbf{x})&lt;T} = \mathbf{1}_{\hat{g}(\mathbf{x})&lt;T}\)</span> with <span class="math notranslate nohighlight">\(\hat{g}\)</span> the surrogate model of <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<p>In case of rare event probability estimation, the surrogate model has to be accurate in the zones that are relevant to the failure probability estimation i.e. in the vicinity of failure threshold <span class="math notranslate nohighlight">\(T\)</span>
+and in the high probability content regions.</p>
+<p>Active-learning methods consist (AK-MCS, AK-IS, AK-SS, etc.) in refining only the samples (generated by the reliability method) that are uncertain with respect the threshold exceedance in order to limit the uncertainty provided by the metamodel to the failure probability. The goal is to minimize the number of samples that have to be evaluated on the real function in the probability simulation.**</p>
+<p>From the initial training set <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, the Gaussian process properties (i.e. estimation of the predicted error variance) are valuable to determine the additional samples which have to be evaluated on $g(cdot)$ to refine its surrogate model. Different refinement strategies have been developed in the litterature.</p>
+<p>Active-learning techniques generally use the following scheme :</p>
+<div class="clearer docutils container">
+<img alt="../_images/AK_algo.png" src="../_images/AK_algo.png" />
+</div>
+<p>From the initial training set <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>,
+the Gaussian process properties (i.e. estimation of the predicted error variance) are  valuable to determine the additional samples which have to be evaluated on <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> to refine its surrogate model.
+Different refinement strategies have been developed in the literature. Here, the method described in [Echard 2011] is implemented  (&quot;U criterion&quot;).</p>
+<p>This method determines a new sample point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> to add to the training set <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> by solving the following optimisation problem:
+<span class="math notranslate nohighlight">\(\underset{\mathbf{x}}{\max} \left[1 - \Phi_{0,1}\left(  \frac{\left|T-\hat{g}(\mathbf{x},\mathcal{X})\right|}{\hat{\sigma}(\mathbf{x},\mathcal{X})} \right)\right]\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\Phi_{0,1}(\cdot)\)</span> is the cdf of the standard Gaussian distribution, <span class="math notranslate nohighlight">\(\hat{\phi}\)</span> the mean prediction of the Kriging and <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span> the estimated standard deviation of the prediction error.</p>
+<p>The used criterion generates a sample for which the Kriging prediction is closed to the threshold  (numerator) and which presents a high prediction error (denominator). Due to the monotonicity of the involved cdf, the optimisation problem is equivalent to:</p>
+<p><span class="math notranslate nohighlight">\(\underset{\mathbf{x}}{\min}\;  \frac{\left|T-\hat{g}(\mathbf{x},\mathcal{X})\right|}{\hat{\sigma}(\mathbf{x},\mathcal{X})}\)</span></p>
+<p>This criterion has been coupled with usual reliability methods present in OpenTURNS. In practice, the optimisation problem is not solved, and given a sample set <span class="math notranslate nohighlight">\(\{\mathbf{X}_1,\dots, \mathbf{X}_N\}\)</span> provided by the reliability algorithm the new sample which will be added to the training set is determined by</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{X} = \underset{\mathbf{X}_1,\dots,\mathbf{X}_N}{\text{argmin}}  \left\{\frac{\left|T-\hat{g}(\mathbf{X}_1,\mathcal{X})\right|}{\hat{\sigma}(\mathbf{X}_1,\mathcal{X})},\dots, \frac{\left|T-\hat{g}(\mathbf{X}_N,\mathcal{X})\right|}{\hat{\sigma}(\mathbf{X}_N,\mathcal{X})}     \right\}\)</span></p>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Echard, B., Gayton, N., &amp; Lemaire, M. (2011). AK-MCS: an active learning reliability method combining Kriging and Monte Carlo simulation. Structural Safety, 33(2), 145-154.</p></li>
+<li><p>Echard, B. (2012). Assessment by kriging of the reliability of structures subjected to fatigue stress, Université Blaise Pascal, PhD thesis</p></li>
+<li><p>Huan (2016). Assessing small failure probabilities by AK–SS: An active learning method combining Kriging and Subset Simulation, Structural Safety 59 (2016) 86–95</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="ot-AK documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../user_manual/user_manual.html" class="btn btn-neutral float-right" title="User manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OpenTURNS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

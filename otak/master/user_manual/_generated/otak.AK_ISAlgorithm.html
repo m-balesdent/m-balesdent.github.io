@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="python" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AK_ISAlgorithm &mdash; ot-AK 0.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sg_gallery-rendered-html.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/Icon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AK_MCSAlgorithm" href="otak.AK_MCSAlgorithm.html" />
+    <link rel="prev" title="User manual" href="../user_manual.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ot-AK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../principle/principle.html">Principle of AK methods</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../user_manual.html">User manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AK_ISAlgorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otak.AK_MCSAlgorithm.html">AK_MCSAlgorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="otak.AK_SSAlgorithm.html">AK_SSAlgorithm</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ot-AK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../user_manual.html">User manual</a> &raquo;</li>
+      <li>AK_ISAlgorithm</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/user_manual/_generated/otak.AK_ISAlgorithm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="ak-isalgorithm">
+<h1>AK_ISAlgorithm<a class="headerlink" href="#ak-isalgorithm" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">otak.</span></span><span class="sig-name descname"><span class="pre">AK_ISAlgorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_IS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_DoE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FORM_solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm" title="Permalink to this definition"></a></dt>
+<dd><p>Class implementing AK IS algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Event</dt>
+<dd class="field-odd"><p>ThresholdEvent based on composite vector of input variables on limit state function</p>
+</dd>
+<dt class="field-even">N_IS</dt>
+<dd class="field-even"><p>integer, number of IS samples at the MPP found by FORM</p>
+</dd>
+<dt class="field-odd">N_DoE</dt>
+<dd class="field-odd"><p>integer, number of samples in initial Kriging DoE</p>
+</dd>
+<dt class="field-even">Sim_budget</dt>
+<dd class="field-even"><p>integer, total simulation budget available</p>
+</dd>
+<dt class="field-odd">Basis</dt>
+<dd class="field-odd"><p>basis of kriging model</p>
+</dd>
+<dt class="field-even">Cov_model</dt>
+<dd class="field-even"><p>covariance model of kriging</p>
+</dd>
+<dt class="field-odd">FORM_solver</dt>
+<dd class="field-odd"><p>FORM solver</p>
+</dd>
+<dt class="field-even">U_criterion</dt>
+<dd class="field-even"><p>float, threshold value for <cite>u criterion</cite></p>
+</dd>
+<dt class="field-odd">Verbose</dt>
+<dd class="field-odd"><p>verbosity parameter</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.compute_FORM" title="otak.AK_ISAlgorithm.compute_FORM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_FORM</span></code></a>()</p></td>
+<td><p>Function performing FORM to get design point</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.compute_U" title="otak.AK_ISAlgorithm.compute_U"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_U</span></code></a>(my_krig, list_id_evaluated)</p></td>
+<td><p>Function computing the infill criterion</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.compute_proba" title="otak.AK_ISAlgorithm.compute_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_proba</span></code></a>()</p></td>
+<td><p>Function computing failure probability using AK-IS</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.getDoE" title="otak.AK_ISAlgorithm.getDoE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getDoE</span></code></a>()</p></td>
+<td><p>Accessor to Design of Experiments,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.getFailureProbability" title="otak.AK_ISAlgorithm.getFailureProbability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getFailureProbability</span></code></a>()</p></td>
+<td><p>Accessor to computed failure probability</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.getIS_Samples" title="otak.AK_ISAlgorithm.getIS_Samples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIS_Samples</span></code></a>()</p></td>
+<td><p>Accessor to Importance Sampling samples,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.getKrigingModel" title="otak.AK_ISAlgorithm.getKrigingModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getKrigingModel</span></code></a>()</p></td>
+<td><p>Accessor to Kriging model,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.KrigingResult</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#otak.AK_ISAlgorithm.getSimBudget" title="otak.AK_ISAlgorithm.getSimBudget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getSimBudget</span></code></a>()</p></td>
+<td><p>Accessor to simulation budget</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_IS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_DoE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cov_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FORM_solver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.__init__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.compute_FORM">
+<span class="sig-name descname"><span class="pre">compute_FORM</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.compute_FORM" title="Permalink to this definition"></a></dt>
+<dd><p>Function performing FORM to get design point</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.compute_U">
+<span class="sig-name descname"><span class="pre">compute_U</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_krig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_id_evaluated</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.compute_U" title="Permalink to this definition"></a></dt>
+<dd><p>Function computing the infill criterion</p>
+<dl class="field-list simple">
+<dt class="field-odd">My_krig</dt>
+<dd class="field-odd"><p>Kriging model <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.KrigingResult</span></code></a></p>
+</dd>
+<dt class="field-even">List_id_evaluated</dt>
+<dd class="field-even"><p>list of evaluated <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.compute_proba">
+<span class="sig-name descname"><span class="pre">compute_proba</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.compute_proba" title="Permalink to this definition"></a></dt>
+<dd><p>Function computing failure probability using AK-IS</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.getDoE">
+<span class="sig-name descname"><span class="pre">getDoE</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.getDoE" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to Design of Experiments,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.getFailureProbability">
+<span class="sig-name descname"><span class="pre">getFailureProbability</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.getFailureProbability" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to computed failure probability</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.getIS_Samples">
+<span class="sig-name descname"><span class="pre">getIS_Samples</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.getIS_Samples" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to Importance Sampling samples,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.Sample</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.getKrigingModel">
+<span class="sig-name descname"><span class="pre">getKrigingModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.getKrigingModel" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to Kriging model,  <a class="reference external" href="http://openturns.github.io/openturns/latest/user_manual/response_surface/_generated/openturns.KrigingResult.html#openturns.KrigingResult" title="(in OpenTURNS v1.18)"><code class="xref py py-class docutils literal notranslate"><span class="pre">openturns.KrigingResult</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="otak.AK_ISAlgorithm.getSimBudget">
+<span class="sig-name descname"><span class="pre">getSimBudget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#otak.AK_ISAlgorithm.getSimBudget" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to simulation budget</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../user_manual.html" class="btn btn-neutral float-left" title="User manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="otak.AK_MCSAlgorithm.html" class="btn btn-neutral float-right" title="AK_MCSAlgorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OpenTURNS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

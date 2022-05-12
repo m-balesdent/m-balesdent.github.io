@@ -176,7 +176,7 @@ Example 3: Use of AK - SS on four branch function
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.237 seconds)
+   **Total running time of the script:** ( 0 minutes  18.942 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example3.py:

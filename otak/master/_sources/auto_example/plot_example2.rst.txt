@@ -165,8 +165,8 @@ Example 2: Use of AK - IS on Non linear oscillator
 
  .. code-block:: none
 
-    Probability of failure: 0.02867081530881406
-    Simulation budget: 48
+    Probability of failure: 0.02867081530928803
+    Simulation budget: 49
 
 
 
@@ -174,7 +174,7 @@ Example 2: Use of AK - IS on Non linear oscillator
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.353 seconds)
+   **Total running time of the script:** ( 0 minutes  0.541 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example2.py:

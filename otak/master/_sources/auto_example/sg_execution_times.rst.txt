@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:28.300** total execution time for **auto_example** files:
+**00:23.349** total execution time for **auto_example** files:
 
 +----------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example3.py` (``plot_example3.py``) | 00:18.942 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example3.py` (``plot_example3.py``) | 00:15.893 | 0.0 MB |
 +----------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example1.py` (``plot_example1.py``) | 00:08.816 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example1.py` (``plot_example1.py``) | 00:07.062 | 0.0 MB |
 +----------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example2.py` (``plot_example2.py``) | 00:00.541 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example2.py` (``plot_example2.py``) | 00:00.394 | 0.0 MB |
 +----------------------------------------------------------------------+-----------+--------+

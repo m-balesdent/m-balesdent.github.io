@@ -18,8 +18,8 @@
 .. _sphx_glr_auto_example_example_KPLSK.py:
 
 
-Use of KPLS
------------
+Use of KPLSK
+------------
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-15
 

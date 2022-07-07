@@ -198,12 +198,12 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Use of KPLS">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of KPLSK">
 
 .. only:: html
 
  .. figure:: /auto_example/images/thumb/sphx_glr_example_KPLSK_thumb.png
-     :alt: Use of KPLS
+     :alt: Use of KPLSK
 
      :ref:`sphx_glr_auto_example_example_KPLSK.py`
 

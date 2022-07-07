@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use of Kriging &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use of KPLS" href="plot_example_KPLS.html" />
+    <link rel="prev" title="Use of Second-order polynomial approximation" href="plot_example_QP.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otsmt
+    </h1>
+    <h2> Module otsmt </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_example_KPLS.html" title="Use of KPLS"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_QP.html" title="Use of Second-order polynomial approximation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Kriging</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="plot_example_QP.html"
+                          title="previous chapter">Use of Second-order polynomial approximation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="plot_example_KPLS.html"
+                          title="next chapter">Use of KPLS</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_example/plot_example_KRG.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-example-plot-example-krg-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="use-of-kriging">
+<span id="sphx-glr-auto-example-plot-example-krg-py"></span><h1>Use of Kriging<a class="headerlink" href="#use-of-kriging" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.sampling_methods</span> <span class="kn">import</span> <span class="n">LHS</span>
+<span class="kn">from</span> <span class="nn">smt.problems</span> <span class="kn">import</span> <span class="n">Sphere</span>
+<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">KRG</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">otsmt</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sampling</span> <span class="o">=</span> <span class="n">LHS</span><span class="p">(</span><span class="n">xlimits</span><span class="o">=</span><span class="n">fun</span><span class="o">.</span><span class="n">xlimits</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">xt</span> <span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">yt</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="c1"># Compute the gradient</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for Kriging</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sm_krg</span> <span class="o">=</span> <span class="n">KRG</span><span class="p">(</span><span class="n">theta0</span><span class="o">=</span><span class="p">[</span><span class="mf">1e-2</span><span class="p">])</span>
+<span class="n">sm_krg</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sm_krg</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+                                  Kriging
+___________________________________________________________________________
+
+ Problem size
+
+      # training points.        : 40
+
+___________________________________________________________________________
+
+ Training
+
+   Training ...
+   Training - done. Time (sec):  0.0659966
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otkrg</span> <span class="o">=</span>  <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_krg</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgprediction</span></a> <span class="o">=</span> <span class="n">otkrg</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgvariances</span></a> <span class="o">=</span> <span class="n">otkrg</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgfirstderivatives</span></a> <span class="o">=</span> <span class="n">otkrg</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgsecondderivatives</span></a> <span class="o">=</span> <span class="n">otkrg</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgvariances</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgfirstderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean second derivatives by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgsecondderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0002396
+
+   Prediction time/pt. (sec) :  0.0000240
+
+Predicted values by KRG:     [ y0        ]
+0 : [  24.5352  ]
+1 : [ 117.783   ]
+2 : [  95.6864  ]
+3 : [  97.1727  ]
+4 : [  53.4356  ]
+5 : [  64.1836  ]
+6 : [  39.929   ]
+7 : [   4.56665 ]
+8 : [ 144.218   ]
+9 : [  26.162   ]
+Predicted variances values by KRG:     [ y0          ]
+0 : [ 6.12643e-08 ]
+1 : [ 3.78649e-07 ]
+2 : [ 1.31517e-07 ]
+3 : [ 7.6573e-08  ]
+4 : [ 1.11705e-07 ]
+5 : [ 9.01099e-08 ]
+6 : [ 7.12267e-08 ]
+7 : [ 7.92964e-08 ]
+8 : [ 2.84681e-07 ]
+9 : [ 8.82838e-08 ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0001829
+
+   Prediction time/pt. (sec) :  0.0000183
+
+Predicted mean first derivatives by KRG:     [ y0        ]
+0 : [  -4.70982 ]
+1 : [  10.5091  ]
+2 : [  18.1496  ]
+3 : [ -18.4843  ]
+4 : [   6.69166 ]
+5 : [  12.7454  ]
+6 : [   1.89073 ]
+7 : [  -2.39427 ]
+8 : [ -15.9846  ]
+9 : [ -10.1417  ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0001802
+
+   Prediction time/pt. (sec) :  0.0000180
+
+Predicted mean second derivatives by KRG:     [ y0        ]
+0 : [   8.71536 ]
+1 : [ -18.9912  ]
+2 : [   7.30329 ]
+3 : [  -6.8571  ]
+4 : [ -12.9987  ]
+5 : [  -9.71039 ]
+6 : [  12.4957  ]
+7 : [  -3.54018 ]
+8 : [  17.926   ]
+9 : [   1.33913 ]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.073 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-krg-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/8456dba015ba4c5e1706af43f36dd83e/plot_example_KRG.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_KRG.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/be26b6367ca0808ab928245bfe81715a/plot_example_KRG.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_example_KRG.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_example_KPLS.html" title="Use of KPLS"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_QP.html" title="Use of Second-order polynomial approximation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Kriging</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

@@ -13,10 +13,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_QP_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_QP_thumb.png
      :alt: Use of Second-order polynomial approximation
 
-     :ref:`sphx_glr_auto_example_example_QP.py`
+     :ref:`sphx_glr_auto_example_plot_example_QP.py`
 
 .. raw:: html
 
@@ -26,7 +26,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_QP
+   /auto_example/plot_example_QP
 
 .. raw:: html
 
@@ -34,10 +34,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_LS_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_LS_thumb.png
      :alt: Use of Least Squares Surrogate Model
 
-     :ref:`sphx_glr_auto_example_example_LS.py`
+     :ref:`sphx_glr_auto_example_plot_example_LS.py`
 
 .. raw:: html
 
@@ -47,7 +47,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_LS
+   /auto_example/plot_example_LS
 
 .. raw:: html
 
@@ -55,10 +55,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_RBF_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_RBF_thumb.png
      :alt: Use of Radial Basis Function
 
-     :ref:`sphx_glr_auto_example_example_RBF.py`
+     :ref:`sphx_glr_auto_example_plot_example_RBF.py`
 
 .. raw:: html
 
@@ -68,7 +68,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_RBF
+   /auto_example/plot_example_RBF
 
 .. raw:: html
 
@@ -76,10 +76,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_IDW_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_IDW_thumb.png
      :alt: Use of Inverse Distance Weighting
 
-     :ref:`sphx_glr_auto_example_example_IDW.py`
+     :ref:`sphx_glr_auto_example_plot_example_IDW.py`
 
 .. raw:: html
 
@@ -89,7 +89,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_IDW
+   /auto_example/plot_example_IDW
 
 .. raw:: html
 
@@ -97,10 +97,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_MOE_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_MOE_thumb.png
      :alt: Use of Mixture of Experts
 
-     :ref:`sphx_glr_auto_example_example_MOE.py`
+     :ref:`sphx_glr_auto_example_plot_example_MOE.py`
 
 .. raw:: html
 
@@ -110,7 +110,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_MOE
+   /auto_example/plot_example_MOE
 
 .. raw:: html
 
@@ -118,10 +118,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_RMTB_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_RMTB_thumb.png
      :alt: Use of Regularized minimal-energy tensor-product splines
 
-     :ref:`sphx_glr_auto_example_example_RMTB.py`
+     :ref:`sphx_glr_auto_example_plot_example_RMTB.py`
 
 .. raw:: html
 
@@ -131,7 +131,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_RMTB
+   /auto_example/plot_example_RMTB
 
 .. raw:: html
 
@@ -139,10 +139,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_GENN_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_GENN_thumb.png
      :alt: Use of Gradient Enhanced Neural Network Model
 
-     :ref:`sphx_glr_auto_example_example_GENN.py`
+     :ref:`sphx_glr_auto_example_plot_example_GENN.py`
 
 .. raw:: html
 
@@ -152,7 +152,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_GENN
+   /auto_example/plot_example_GENN
 
 .. raw:: html
 
@@ -160,10 +160,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_KRG_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_KRG_thumb.png
      :alt: Use of Kriging
 
-     :ref:`sphx_glr_auto_example_example_KRG.py`
+     :ref:`sphx_glr_auto_example_plot_example_KRG.py`
 
 .. raw:: html
 
@@ -173,7 +173,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_KRG
+   /auto_example/plot_example_KRG
 
 .. raw:: html
 
@@ -181,10 +181,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_KPLS_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_KPLS_thumb.png
      :alt: Use of KPLS
 
-     :ref:`sphx_glr_auto_example_example_KPLS.py`
+     :ref:`sphx_glr_auto_example_plot_example_KPLS.py`
 
 .. raw:: html
 
@@ -194,7 +194,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_KPLS
+   /auto_example/plot_example_KPLS
 
 .. raw:: html
 
@@ -202,10 +202,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_KPLSK_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_KPLSK_thumb.png
      :alt: Use of KPLSK
 
-     :ref:`sphx_glr_auto_example_example_KPLSK.py`
+     :ref:`sphx_glr_auto_example_plot_example_KPLSK.py`
 
 .. raw:: html
 
@@ -215,7 +215,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_KPLSK
+   /auto_example/plot_example_KPLSK
 
 .. raw:: html
 
@@ -223,10 +223,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_MixedVariableKriging_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_MixedVariableKriging_thumb.png
      :alt: Use of Mixed Variable Kriging
 
-     :ref:`sphx_glr_auto_example_example_MixedVariableKriging.py`
+     :ref:`sphx_glr_auto_example_plot_example_MixedVariableKriging.py`
 
 .. raw:: html
 
@@ -236,7 +236,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_MixedVariableKriging
+   /auto_example/plot_example_MixedVariableKriging
 
 .. raw:: html
 
@@ -244,10 +244,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_MFK_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_MFK_thumb.png
      :alt: Use of Multi-Fidelity Kriging
 
-     :ref:`sphx_glr_auto_example_example_MFK.py`
+     :ref:`sphx_glr_auto_example_plot_example_MFK.py`
 
 .. raw:: html
 
@@ -257,7 +257,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_MFK
+   /auto_example/plot_example_MFK
 
 .. raw:: html
 
@@ -265,10 +265,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_MFKPLS_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_MFKPLS_thumb.png
      :alt: Use of Multi-Fidelity Kriging Partial Least Squares
 
-     :ref:`sphx_glr_auto_example_example_MFKPLS.py`
+     :ref:`sphx_glr_auto_example_plot_example_MFKPLS.py`
 
 .. raw:: html
 
@@ -278,7 +278,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_MFKPLS
+   /auto_example/plot_example_MFKPLS
 
 .. raw:: html
 
@@ -286,10 +286,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_MFKPLSK_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_MFKPLSK_thumb.png
      :alt: Use of Multi-Fidelity Kriging Partial Least Squares K
 
-     :ref:`sphx_glr_auto_example_example_MFKPLSK.py`
+     :ref:`sphx_glr_auto_example_plot_example_MFKPLSK.py`
 
 .. raw:: html
 
@@ -299,7 +299,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_MFKPLSK
+   /auto_example/plot_example_MFKPLSK
 
 .. raw:: html
 
@@ -307,10 +307,10 @@
 
 .. only:: html
 
- .. figure:: /auto_example/images/thumb/sphx_glr_example_GEKPLS_thumb.png
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_GEKPLS_thumb.png
      :alt: Use of GEKPLS
 
-     :ref:`sphx_glr_auto_example_example_GEKPLS.py`
+     :ref:`sphx_glr_auto_example_plot_example_GEKPLS.py`
 
 .. raw:: html
 
@@ -320,7 +320,7 @@
 .. toctree::
    :hidden:
 
-   /auto_example/example_GEKPLS
+   /auto_example/plot_example_GEKPLS
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

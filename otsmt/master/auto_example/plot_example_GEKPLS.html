@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use of GEKPLS &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use of Mixture of Experts" href="plot_example_MOE.html" />
+    <link rel="prev" title="Use of KPLSK" href="plot_example_KPLSK.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otsmt
+    </h1>
+    <h2> Module otsmt </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_example_MOE.html" title="Use of Mixture of Experts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_KPLSK.html" title="Use of KPLSK"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of GEKPLS</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="plot_example_KPLSK.html"
+                          title="previous chapter">Use of KPLSK</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="plot_example_MOE.html"
+                          title="next chapter">Use of Mixture of Experts</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_example/plot_example_GEKPLS.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-example-plot-example-gekpls-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="use-of-gekpls">
+<span id="sphx-glr-auto-example-plot-example-gekpls-py"></span><h1>Use of GEKPLS<a class="headerlink" href="#use-of-gekpls" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.sampling_methods</span> <span class="kn">import</span> <span class="n">LHS</span>
+<span class="kn">from</span> <span class="nn">smt.problems</span> <span class="kn">import</span> <span class="n">Sphere</span>
+<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">GEKPLS</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">otsmt</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sampling</span> <span class="o">=</span> <span class="n">LHS</span><span class="p">(</span><span class="n">xlimits</span><span class="o">=</span><span class="n">fun</span><span class="o">.</span><span class="n">xlimits</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">xt</span> <span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">yt</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="c1"># Compute the gradient</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for GEKPLS</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n_comp</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">sm_gekpls</span> <span class="o">=</span> <span class="n">GEKPLS</span><span class="p">(</span>
+                    <span class="n">theta0</span><span class="o">=</span><span class="p">[</span><span class="mf">1e-2</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_comp</span><span class="p">,</span>
+                    <span class="n">xlimits</span><span class="o">=</span><span class="n">fun</span><span class="o">.</span><span class="n">xlimits</span><span class="p">,</span>
+                    <span class="n">extra_points</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">print_prediction</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">n_comp</span><span class="o">=</span><span class="n">n_comp</span><span class="p">,</span>
+                    <span class="p">)</span>
+<span class="n">sm_gekpls</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">][:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+   <span class="n">sm_gekpls</span><span class="o">.</span><span class="n">set_training_derivatives</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">[:,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">yt</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">sm_gekpls</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+                                  GEKPLS
+___________________________________________________________________________
+
+ Problem size
+
+      # training points.        : 40
+
+___________________________________________________________________________
+
+ Training
+
+   Training ...
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
+  warnings.warn(f&quot;Y residual is constant at iteration {k}&quot;)
+   Training - done. Time (sec):  0.1313114
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otgekpls</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_gekpls</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsprediction</span></a> <span class="o">=</span> <span class="n">otgekpls</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsvariances</span></a> <span class="o">=</span> <span class="n">otgekpls</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsfirstderivatives</span></a> <span class="o">=</span> <span class="n">otgekpls</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplssecondderivatives</span></a> <span class="o">=</span> <span class="n">otgekpls</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by GEKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by GEKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsvariances</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by GEKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplsfirstderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean second derivatives by GEKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgekplssecondderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Predicted values by GEKPLS:     [ y0        ]
+0 : [  47.8136  ]
+1 : [ 109.4     ]
+2 : [  91.7283  ]
+3 : [  89.8216  ]
+4 : [   1.99044 ]
+5 : [  90.0777  ]
+6 : [  71.59    ]
+7 : [  55.032   ]
+8 : [  53.2398  ]
+9 : [  34.1366  ]
+Predicted variances values by GEKPLS:     [ y0          ]
+0 : [ 1.03025e-09 ]
+1 : [ 5.09603e-08 ]
+2 : [ 4.39519e-08 ]
+3 : [ 7.89523e-08 ]
+4 : [ 1.95515e-09 ]
+5 : [ 2.12462e-06 ]
+6 : [ 2.79333e-08 ]
+7 : [ 1.56964e-08 ]
+8 : [ 1.61617e-07 ]
+9 : [ 1.38781e-09 ]
+Predicted mean first derivatives by GEKPLS:     [ y0         ]
+0 : [  -8.73422  ]
+1 : [  10.6879   ]
+2 : [  14.5705   ]
+3 : [ -18.9169   ]
+4 : [  -1.30882  ]
+5 : [  18.4512   ]
+6 : [  -4.32487  ]
+7 : [ -12.5469   ]
+8 : [   0.406964 ]
+9 : [   7.11717  ]
+Predicted mean second derivatives by GEKPLS:     [ y0        ]
+0 : [ -10.7223  ]
+1 : [ -17.9826  ]
+2 : [  12.4344  ]
+3 : [  -1.19842 ]
+4 : [   2.49977 ]
+5 : [  -4.45807 ]
+6 : [  16.3602  ]
+7 : [   7.91864 ]
+8 : [ -14.5875  ]
+9 : [   9.26779 ]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.138 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-gekpls-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/7a20f080d0fad6b34781ff6445b527aa/plot_example_GEKPLS.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_GEKPLS.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/f11c40b04e3b2cddbec026a301af6b0b/plot_example_GEKPLS.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_example_GEKPLS.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_example_MOE.html" title="Use of Mixture of Experts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_KPLSK.html" title="Use of KPLSK"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of GEKPLS</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

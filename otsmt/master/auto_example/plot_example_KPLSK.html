@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use of KPLSK &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use of GEKPLS" href="plot_example_GEKPLS.html" />
+    <link rel="prev" title="Use of KPLS" href="plot_example_KPLS.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otsmt
+    </h1>
+    <h2> Module otsmt </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_example_GEKPLS.html" title="Use of GEKPLS"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_KPLS.html" title="Use of KPLS"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of KPLSK</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="plot_example_KPLS.html"
+                          title="previous chapter">Use of KPLS</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="plot_example_GEKPLS.html"
+                          title="next chapter">Use of GEKPLS</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_example/plot_example_KPLSK.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-example-plot-example-kplsk-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="use-of-kplsk">
+<span id="sphx-glr-auto-example-plot-example-kplsk-py"></span><h1>Use of KPLSK<a class="headerlink" href="#use-of-kplsk" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.sampling_methods</span> <span class="kn">import</span> <span class="n">LHS</span>
+<span class="kn">from</span> <span class="nn">smt.problems</span> <span class="kn">import</span> <span class="n">Sphere</span>
+<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">KPLSK</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">otsmt</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sampling</span> <span class="o">=</span> <span class="n">LHS</span><span class="p">(</span><span class="n">xlimits</span><span class="o">=</span><span class="n">fun</span><span class="o">.</span><span class="n">xlimits</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">xt</span> <span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">yt</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+<span class="c1"># Compute the gradient</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for KPLSK</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sm_kplsk</span> <span class="o">=</span> <span class="n">KPLSK</span><span class="p">(</span><span class="n">theta0</span><span class="o">=</span><span class="p">[</span><span class="mf">1e-2</span><span class="p">])</span>
+<span class="n">sm_kplsk</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">sm_kplsk</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+                                   KPLSK
+___________________________________________________________________________
+
+ Problem size
+
+      # training points.        : 40
+
+___________________________________________________________________________
+
+ Training
+
+   Training ...
+   Training - done. Time (sec):  0.0961680
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otkplsk</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_kplsk</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskprediction</span></a> <span class="o">=</span> <span class="n">otkplsk</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskvariances</span></a> <span class="o">=</span> <span class="n">otkplsk</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskfirstderivatives</span></a> <span class="o">=</span> <span class="n">otkplsk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplsksecondderivatives</span></a> <span class="o">=</span> <span class="n">otkplsk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by KPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by KPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskvariances</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by KPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplskfirstderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean second derivatives by KPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkplsksecondderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0002441
+
+   Prediction time/pt. (sec) :  0.0000244
+
+Predicted values by KPLSK:     [ y0        ]
+0 : [  51.2578  ]
+1 : [  28.6372  ]
+2 : [  97.3245  ]
+3 : [  62.5219  ]
+4 : [ 130.823   ]
+5 : [   3.76825 ]
+6 : [ 108.1     ]
+7 : [ 172.664   ]
+8 : [  36.9588  ]
+9 : [  33.8822  ]
+Predicted variances values by KPLSK:     [ y0          ]
+0 : [ 6.50466e-08 ]
+1 : [ 9.31209e-08 ]
+2 : [ 3.26161e-07 ]
+3 : [ 5.78901e-08 ]
+4 : [ 7.07354e-06 ]
+5 : [ 6.61305e-08 ]
+6 : [ 1.22123e-07 ]
+7 : [ 7.00767e-07 ]
+8 : [ 9.53626e-08 ]
+9 : [ 8.16804e-08 ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0001874
+
+   Prediction time/pt. (sec) :  0.0000187
+
+Predicted mean first derivatives by KPLSK:     [ y0        ]
+0 : [ -12.6828  ]
+1 : [  -9.65202 ]
+2 : [  11.8261  ]
+3 : [  15.3276  ]
+4 : [  18.0428  ]
+5 : [  -2.1108  ]
+6 : [  -7.15694 ]
+7 : [ -18.2171  ]
+8 : [   6.32616 ]
+9 : [   3.8894  ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0001748
+
+   Prediction time/pt. (sec) :  0.0000175
+
+Predicted mean second derivatives by KPLSK:     [ y0        ]
+0 : [  -6.64658 ]
+1 : [   4.62452 ]
+2 : [ -15.7941  ]
+3 : [   3.89258 ]
+4 : [  14.0604  ]
+5 : [  -3.25824 ]
+6 : [ -19.5237  ]
+7 : [  18.9403  ]
+8 : [ -10.3834  ]
+9 : [  10.9728  ]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.103 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-kplsk-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/ce8d4a660b2e86b105ed124a7d4e7492/plot_example_KPLSK.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_KPLSK.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/0d4cd0240b6f4ee315c508edff784b10/plot_example_KPLSK.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_example_KPLSK.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_example_GEKPLS.html" title="Use of GEKPLS"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_KPLS.html" title="Use of KPLS"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of KPLSK</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

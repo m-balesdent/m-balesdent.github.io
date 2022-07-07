@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use of Multi-Fidelity Kriging Partial Least Squares K &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use of Mixed Variable Kriging" href="plot_example_MixedVariableKriging.html" />
+    <link rel="prev" title="Use of Multi-Fidelity Kriging Partial Least Squares" href="plot_example_MFKPLS.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otsmt
+    </h1>
+    <h2> Module otsmt </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plot_example_MixedVariableKriging.html" title="Use of Mixed Variable Kriging"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_MFKPLS.html" title="Use of Multi-Fidelity Kriging Partial Least Squares"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Multi-Fidelity Kriging Partial Least Squares K</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="plot_example_MFKPLS.html"
+                          title="previous chapter">Use of Multi-Fidelity Kriging Partial Least Squares</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="plot_example_MixedVariableKriging.html"
+                          title="next chapter">Use of Mixed Variable Kriging</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_example/plot_example_MFKPLSK.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-example-plot-example-mfkplsk-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="use-of-multi-fidelity-kriging-partial-least-squares-k">
+<span id="sphx-glr-auto-example-plot-example-mfkplsk-py"></span><h1>Use of Multi-Fidelity Kriging Partial Least Squares K<a class="headerlink" href="#use-of-multi-fidelity-kriging-partial-least-squares-k" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.applications</span> <span class="kn">import</span> <span class="n">MFKPLSK</span><span class="p">,</span><span class="n">NestedLHS</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">otsmt</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
+<span class="c1"># low fidelity model</span>
+<span class="k">def</span> <span class="nf">lf_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">10.0</span>
+        <span class="o">-</span> <span class="mi">5</span>
+    <span class="p">)</span>
+
+<span class="c1"># high fidelity model</span>
+<span class="k">def</span> <span class="nf">hf_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Problem set up</span>
+<span class="n">xlimits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]])</span>
+<span class="n">xdoes</span> <span class="o">=</span> <span class="n">NestedLHS</span><span class="p">(</span><span class="n">nlevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">xlimits</span><span class="o">=</span><span class="n">xlimits</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">xt_c</span><span class="p">,</span> <span class="n">xt_e</span> <span class="o">=</span> <span class="n">xdoes</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the HF and LF functions</span>
+<span class="n">yt_e</span> <span class="o">=</span> <span class="n">hf_function</span><span class="p">(</span><span class="n">xt_e</span><span class="p">)</span>
+<span class="n">yt_c</span> <span class="o">=</span> <span class="n">lf_function</span><span class="p">(</span><span class="n">xt_c</span><span class="p">)</span>
+
+<span class="n">xv_c</span><span class="p">,</span> <span class="n">xv_e</span> <span class="o">=</span> <span class="n">xdoes</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2845: RuntimeWarning: Degrees of freedom &lt;= 0 for slice
+  c = cov(x, y, rowvar, dtype=dtype)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: divide by zero encountered in divide
+  c *= np.true_divide(1, fact)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: invalid value encountered in multiply
+  c *= np.true_divide(1, fact)
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for MFKPLSK</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># choice of number of PLS components</span>
+<span class="n">ncomp</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">sm_mfkplsk</span> <span class="o">=</span> <span class="n">MFKPLSK</span><span class="p">(</span><span class="n">n_comp</span><span class="o">=</span><span class="n">ncomp</span><span class="p">,</span> <span class="n">theta0</span><span class="o">=</span><span class="n">ncomp</span> <span class="o">*</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+
+<span class="c1"># low-fidelity dataset names being integers from 0 to level-1</span>
+<span class="n">sm_mfkplsk</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt_c</span><span class="p">,</span> <span class="n">yt_c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># high-fidelity dataset without name</span>
+<span class="n">sm_mfkplsk</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt_e</span><span class="p">,</span> <span class="n">yt_e</span><span class="p">)</span>
+
+<span class="c1"># train the model</span>
+<span class="n">sm_mfkplsk</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+                                  MFKPLSK
+___________________________________________________________________________
+
+ Problem size
+
+      # training points.        : 7
+
+___________________________________________________________________________
+
+ Training
+
+   Training ...
+   Training - done. Time (sec):  0.1085999
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otmfkplsk</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_mfkplsk</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskprediction</span></a> <span class="o">=</span> <span class="n">otmfkplsk</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskpvariances</span></a> <span class="o">=</span> <span class="n">otmfkplsk</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskfirstderivatives</span></a> <span class="o">=</span> <span class="n">otmfkplsk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFKPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFKPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskpvariances</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFKPLSK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplskfirstderivatives</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0003722
+
+   Prediction time/pt. (sec) :  0.0000372
+
+Predicted values by MFKPLSK:     [ y0          ]
+0 : [  0.00407336 ]
+1 : [ 10.9228     ]
+2 : [  0.413306   ]
+3 : [  0.689916   ]
+4 : [  5.20031    ]
+5 : [ -0.878465   ]
+6 : [  0.554414   ]
+7 : [ -0.147649   ]
+8 : [ -5.4338     ]
+9 : [ -1.91136    ]
+Predicted variances values by MFKPLSK:     [ y0          ]
+0 : [ 1.45563e-09 ]
+1 : [ 6.35405e-07 ]
+2 : [ 3.5289e-09  ]
+3 : [ 1.78342e-09 ]
+4 : [ 2.11526e-07 ]
+5 : [ 2.80919e-09 ]
+6 : [ 3.50229e-06 ]
+7 : [ 1.44567e-09 ]
+8 : [ 6.91343e-09 ]
+9 : [ 1.49239e-09 ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 10
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0003402
+
+   Prediction time/pt. (sec) :  0.0000340
+
+Predicted mean first derivatives by MFKPLSK:     [ y0         ]
+0 : [   0.569425 ]
+1 : [ 124.682    ]
+2 : [   8.91345  ]
+3 : [ -15.6019   ]
+4 : [ 140.384    ]
+5 : [   6.75738  ]
+6 : [ -36.8402   ]
+7 : [   5.51796  ]
+8 : [  37.8547   ]
+9 : [ -47.0549   ]
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.223 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-mfkplsk-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/cc76b3accf261e7861155b97f0740a6e/plot_example_MFKPLSK.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_MFKPLSK.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/f916345902cb4037275d054cc58ab8f9/plot_example_MFKPLSK.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">plot_example_MFKPLSK.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plot_example_MixedVariableKriging.html" title="Use of Mixed Variable Kriging"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_example_MFKPLS.html" title="Use of Multi-Fidelity Kriging Partial Least Squares"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Multi-Fidelity Kriging Partial Least Squares K</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

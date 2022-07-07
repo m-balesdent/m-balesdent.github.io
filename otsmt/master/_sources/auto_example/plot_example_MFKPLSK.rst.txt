@@ -138,7 +138,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
      Training
    
        Training ...
-       Training - done. Time (sec):  0.1055224
+       Training - done. Time (sec):  0.1163158
 
 
 
@@ -176,9 +176,9 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003395
+       Predicting - done. Time (sec):  0.0003815
    
-       Prediction time/pt. (sec) :  0.0001698
+       Prediction time/pt. (sec) :  0.0001907
    
     Predicted values by MFKPLSK:     [ y0        ]
     0 : [ -0.656609 ]
@@ -193,9 +193,9 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003185
+       Predicting - done. Time (sec):  0.0003405
    
-       Prediction time/pt. (sec) :  0.0001593
+       Prediction time/pt. (sec) :  0.0001702
    
     Predicted mean first derivatives by MFKPLSK:     [ y0        ]
     0 : [ -16.5315  ]
@@ -207,7 +207,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.165 seconds)
+   **Total running time of the script:** ( 0 minutes  0.175 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFKPLSK.py:

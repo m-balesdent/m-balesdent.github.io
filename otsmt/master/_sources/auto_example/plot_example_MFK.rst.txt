@@ -137,7 +137,7 @@ Use of Multi-Fidelity Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0515251
+       Training - done. Time (sec):  0.0565300
 
 
 
@@ -195,9 +195,9 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003438
+       Predicting - done. Time (sec):  0.0003753
    
-       Prediction time/pt. (sec) :  0.0000069
+       Prediction time/pt. (sec) :  0.0000075
    
     Predicted values by MFK:      [ y0           ]
      0 : [  3.36259     ]
@@ -308,9 +308,9 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003226
+       Predicting - done. Time (sec):  0.0003569
    
-       Prediction time/pt. (sec) :  0.0000065
+       Prediction time/pt. (sec) :  0.0000071
    
     Predicted mean first derivatives by MFK:      [ y0          ]
      0 : [ -62.1445    ]
@@ -370,19 +370,19 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003312
+       Predicting - done. Time (sec):  0.0003278
    
        Prediction time/pt. (sec) :  0.0000066
    
 
-    <matplotlib.legend.Legend object at 0x7ff6c8a9c7f0>
+    <matplotlib.legend.Legend object at 0x7f4abad008e0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.190 seconds)
+   **Total running time of the script:** ( 0 minutes  0.199 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFK.py:

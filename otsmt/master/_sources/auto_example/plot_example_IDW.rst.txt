@@ -107,7 +107,7 @@ Use of Inverse Distance Weighting
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0001414
+       Training - done. Time (sec):  0.0001721
 
 
 
@@ -140,13 +140,13 @@ Use of Inverse Distance Weighting
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000250
+       Predicting - done. Time (sec):  0.0000308
    
-       Prediction time/pt. (sec) :  0.0000125
+       Prediction time/pt. (sec) :  0.0000154
    
     Predicted values by IDW:     [ y0      ]
-    0 : [ 21.7827 ]
-    1 : [ 39.8867 ]
+    0 : [ 32.7105 ]
+    1 : [ 35.8607 ]
 
 
 

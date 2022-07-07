@@ -177,7 +177,7 @@ ___________________________________________________________________________
  Training
 
    Training ...
-   Training - done. Time (sec):  0.0546439
+   Training - done. Time (sec):  0.1281824
 </pre></div>
 </div>
 <div class="line-block">
@@ -191,6 +191,12 @@ ___________________________________________________________________________
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkpvariances</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkfirstderivatives</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Use of Multi-Fidelity Kriging</span>
+<span class="sd">-----------------------------</span>
+<span class="sd">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -201,32 +207,32 @@ ___________________________________________________________________________
       # eval points. : 10
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003538
+   Predicting - done. Time (sec):  0.0005214
 
-   Prediction time/pt. (sec) :  0.0000354
+   Prediction time/pt. (sec) :  0.0000521
 
 Predicted values by MFK:     [ y0          ]
-0 : [  0.00407305 ]
+0 : [  0.00407291 ]
 1 : [ 10.9228     ]
 2 : [  0.413308   ]
 3 : [  0.689917   ]
 4 : [  5.20032    ]
 5 : [ -0.878463   ]
-6 : [  0.554562   ]
-7 : [ -0.147648   ]
+6 : [  0.554561   ]
+7 : [ -0.147649   ]
 8 : [ -5.4338     ]
 9 : [ -1.91136    ]
 Predicted variances values by MFK:     [ y0          ]
-0 : [ 2.67142e-09 ]
-1 : [ 6.70922e-07 ]
-2 : [ 4.97544e-09 ]
-3 : [ 3.0945e-09  ]
-4 : [ 2.25231e-07 ]
-5 : [ 4.5071e-09  ]
-6 : [ 3.67607e-06 ]
-7 : [ 2.68668e-09 ]
-8 : [ 8.19581e-09 ]
-9 : [ 2.7629e-09  ]
+0 : [ 2.69515e-09 ]
+1 : [ 6.71287e-07 ]
+2 : [ 4.93707e-09 ]
+3 : [ 3.05466e-09 ]
+4 : [ 2.25287e-07 ]
+5 : [ 4.44374e-09 ]
+6 : [ 3.67629e-06 ]
+7 : [ 2.66354e-09 ]
+8 : [ 8.41956e-09 ]
+9 : [ 2.82229e-09 ]
 ___________________________________________________________________________
 
  Evaluation
@@ -234,24 +240,321 @@ ___________________________________________________________________________
       # eval points. : 10
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003111
+   Predicting - done. Time (sec):  0.0005281
 
-   Prediction time/pt. (sec) :  0.0000311
+   Prediction time/pt. (sec) :  0.0000528
 
 Predicted mean first derivatives by MFK:     [ y0         ]
-0 : [   0.569445 ]
+0 : [   0.569446 ]
 1 : [ 124.681    ]
 2 : [   8.91344  ]
 3 : [ -15.6019   ]
 4 : [ 140.383    ]
 5 : [   6.75721  ]
-6 : [ -36.8524   ]
+6 : [ -36.8525   ]
 7 : [   5.518    ]
 8 : [  37.8547   ]
 9 : [ -47.0549   ]
+
+&#39;\nUse of Multi-Fidelity Kriging\n-----------------------------\n&#39;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.170 seconds)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.applications</span> <span class="kn">import</span> <span class="n">MFK</span><span class="p">,</span><span class="n">NestedLHS</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
+<span class="c1"># low fidelity model</span>
+<span class="k">def</span> <span class="nf">lf_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mf">10.0</span>
+        <span class="o">-</span> <span class="mi">5</span>
+    <span class="p">)</span>
+
+<span class="c1"># high fidelity model</span>
+<span class="k">def</span> <span class="nf">hf_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Problem set up</span>
+<span class="n">xlimits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]])</span>
+<span class="n">xdoes</span> <span class="o">=</span> <span class="n">NestedLHS</span><span class="p">(</span><span class="n">nlevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">xlimits</span><span class="o">=</span><span class="n">xlimits</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">xt_c</span><span class="p">,</span> <span class="n">xt_e</span> <span class="o">=</span> <span class="n">xdoes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Evaluate the HF and LF functions</span>
+<span class="n">yt_e</span> <span class="o">=</span> <span class="n">hf_function</span><span class="p">(</span><span class="n">xt_e</span><span class="p">)</span>
+<span class="n">yt_c</span> <span class="o">=</span> <span class="n">lf_function</span><span class="p">(</span><span class="n">xt_c</span><span class="p">)</span>
+
+<span class="n">xv_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">xlimits</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">xlimits</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="mi">50</span><span class="p">)[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">yv_e</span>  <span class="o">=</span> <span class="n">hf_function</span><span class="p">(</span><span class="n">xv_e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2845: RuntimeWarning: Degrees of freedom &lt;= 0 for slice
+  c = cov(x, y, rowvar, dtype=dtype)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: divide by zero encountered in divide
+  c *= np.true_divide(1, fact)
+/usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: invalid value encountered in multiply
+  c *= np.true_divide(1, fact)
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for  Multi-Fidelity Kriging</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sm_mfk</span> <span class="o">=</span> <span class="n">MFK</span><span class="p">(</span><span class="n">theta0</span><span class="o">=</span><span class="n">xt_e</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+
+<span class="c1"># low-fidelity dataset names being integers from 0 to level-1</span>
+<span class="n">sm_mfk</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt_c</span><span class="p">,</span> <span class="n">yt_c</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># high-fidelity dataset without name</span>
+<span class="n">sm_mfk</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt_e</span><span class="p">,</span> <span class="n">yt_e</span><span class="p">)</span>
+
+<span class="c1"># train the model</span>
+<span class="n">sm_mfk</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+                                    MFK
+___________________________________________________________________________
+
+ Problem size
+
+      # training points.        : 4
+
+___________________________________________________________________________
+
+ Training
+
+   Training ...
+   Training - done. Time (sec):  0.0941670
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otmfk</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_mfk</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkpvariances</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkfirstderivatives</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkpvariances</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkfirstderivatives</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xt_c</span><span class="p">,</span><span class="n">yt_c</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;DoE low fidelity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xt_e</span><span class="p">,</span><span class="n">yt_e</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;DoE high fidelity&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_e</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;high fidelity prediction&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xv_e</span><span class="p">,</span><span class="n">yv_e</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;high fidelity true function&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_plot_example_MFK_001.png" srcset="../_images/sphx_glr_plot_example_MFK_001.png" alt="plot example MFK" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 50
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0005474
+
+   Prediction time/pt. (sec) :  0.0000109
+
+Predicted values by MFK:      [ y0           ]
+ 0 : [  3.42355     ]
+ 1 : [  2.2167      ]
+ 2 : [  1.1873      ]
+ 3 : [  0.356157    ]
+ 4 : [ -0.267391    ]
+ 5 : [ -0.686631    ]
+ 6 : [ -0.917408    ]
+ 7 : [ -0.986754    ]
+ 8 : [ -0.930268    ]
+ 9 : [ -0.788478    ]
+10 : [ -0.602583    ]
+11 : [ -0.410063    ]
+12 : [ -0.240744    ]
+13 : [ -0.113842    ]
+14 : [ -0.036433    ]
+15 : [ -0.00362926  ]
+16 : [ -0.000483726 ]
+17 : [ -0.00542781  ]
+18 : [  0.00520831  ]
+19 : [  0.0522195   ]
+20 : [  0.148824    ]
+21 : [  0.296966    ]
+22 : [  0.485236    ]
+23 : [  0.688838    ]
+24 : [  0.871717    ]
+25 : [  0.990703    ]
+26 : [  1.00119     ]
+27 : [  0.863663    ]
+28 : [  0.550219    ]
+29 : [  0.0502107   ]
+30 : [ -0.625779    ]
+31 : [ -1.44422     ]
+32 : [ -2.34951     ]
+33 : [ -3.26739     ]
+34 : [ -4.11071     ]
+35 : [ -4.78679     ]
+36 : [ -5.20574     ]
+37 : [ -5.28881     ]
+38 : [ -4.97591     ]
+39 : [ -4.23153     ]
+40 : [ -3.04853     ]
+41 : [ -1.44951     ]
+42 : [  0.514421    ]
+43 : [  2.76712     ]
+44 : [  5.21279     ]
+45 : [  7.74276     ]
+46 : [ 10.2429      ]
+47 : [ 12.6011      ]
+48 : [ 14.7141      ]
+49 : [ 16.4936      ]
+Predicted variances values by MFK:      [ y0          ]
+ 0 : [ 9.90081     ]
+ 1 : [ 5.27376     ]
+ 2 : [ 2.49959     ]
+ 3 : [ 1.01474     ]
+ 4 : [ 0.329233    ]
+ 5 : [ 0.0730553   ]
+ 6 : [ 0.00636073  ]
+ 7 : [ 0.000396252 ]
+ 8 : [ 0.00283708  ]
+ 9 : [ 0.00200491  ]
+10 : [ 0.000265454 ]
+11 : [ 0.000221339 ]
+12 : [ 0.00137719  ]
+13 : [ 0.00201049  ]
+14 : [ 0.0014392   ]
+15 : [ 0.000417773 ]
+16 : [ 1.71366e-06 ]
+17 : [ 0.000410939 ]
+18 : [ 0.000965775 ]
+19 : [ 0.000942859 ]
+20 : [ 0.00037485  ]
+21 : [ 2.47758e-07 ]
+22 : [ 0.000454181 ]
+23 : [ 0.00153048  ]
+24 : [ 0.00228382  ]
+25 : [ 0.00194201  ]
+26 : [ 0.000777127 ]
+27 : [ 7.20172e-06 ]
+28 : [ 0.000627767 ]
+29 : [ 0.00217422  ]
+30 : [ 0.00281691  ]
+31 : [ 0.0013567   ]
+32 : [ 4.18883e-05 ]
+33 : [ 0.00587208  ]
+34 : [ 0.0283565   ]
+35 : [ 0.0737672   ]
+36 : [ 0.138675    ]
+37 : [ 0.207124    ]
+38 : [ 0.254749    ]
+39 : [ 0.259514    ]
+40 : [ 0.214326    ]
+41 : [ 0.134267    ]
+42 : [ 0.0525589   ]
+43 : [ 0.00477755  ]
+44 : [ 0.00795159  ]
+45 : [ 0.0464996   ]
+46 : [ 0.0771927   ]
+47 : [ 0.0594805   ]
+48 : [ 0.00731502  ]
+49 : [ 0.0480656   ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 50
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0005732
+
+   Prediction time/pt. (sec) :  0.0000115
+
+Predicted mean first derivatives by MFK:      [ y0           ]
+ 0 : [ -63.0218     ]
+ 1 : [ -55.0005     ]
+ 2 : [ -45.7093     ]
+ 3 : [ -35.6656     ]
+ 4 : [ -25.469      ]
+ 5 : [ -15.747      ]
+ 6 : [  -7.09207    ]
+ 7 : [   0.00239146 ]
+ 8 : [   5.19873    ]
+ 9 : [   8.35656    ]
+10 : [   9.55183    ]
+11 : [   9.06908    ]
+12 : [   7.36594    ]
+13 : [   5.01284    ]
+14 : [   2.61473    ]
+15 : [   0.724962   ]
+16 : [  -0.236789   ]
+17 : [  -0.0502768  ]
+18 : [   1.26637    ]
+19 : [   3.45178    ]
+20 : [   6.0331     ]
+21 : [   8.39165    ]
+22 : [   9.8546     ]
+23 : [   9.80052    ]
+24 : [   7.76435    ]
+25 : [   3.52653    ]
+26 : [  -2.82696    ]
+27 : [ -10.8833     ]
+28 : [ -19.9245     ]
+29 : [ -28.9913     ]
+30 : [ -36.9812     ]
+31 : [ -42.7692     ]
+32 : [ -45.3377     ]
+33 : [ -43.897      ]
+34 : [ -37.9846     ]
+35 : [ -27.53       ]
+36 : [ -12.8777     ]
+37 : [   5.23232    ]
+38 : [  25.7251     ]
+39 : [  47.2837     ]
+40 : [  68.4642     ]
+41 : [  87.8195     ]
+42 : [ 104.02       ]
+43 : [ 115.957      ]
+44 : [ 122.826      ]
+45 : [ 124.174      ]
+46 : [ 119.919      ]
+47 : [ 110.337      ]
+48 : [  96.0164     ]
+49 : [  77.8015     ]
+___________________________________________________________________________
+
+ Evaluation
+
+      # eval points. : 50
+
+   Predicting ...
+   Predicting - done. Time (sec):  0.0005062
+
+   Prediction time/pt. (sec) :  0.0000101
+
+
+&lt;matplotlib.legend.Legend object at 0x7f9ea5a2db20&gt;
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.610 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-mfk-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/c4fc887751320978848cfeebb90032b7/plot_example_MFK.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_MFK.py</span></code></a></p>

@@ -106,7 +106,7 @@ Use of Inverse Distance Weighting
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0001619
+       Training - done. Time (sec):  0.0001767
 
 
 
@@ -139,21 +139,21 @@ Use of Inverse Distance Weighting
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000367
+       Predicting - done. Time (sec):  0.0000372
    
        Prediction time/pt. (sec) :  0.0000037
    
-    Predicted values by IDW:     [ y0      ]
-    0 : [ 27.2143 ]
-    1 : [ 84.5716 ]
-    2 : [ 82.9567 ]
-    3 : [ 72.673  ]
-    4 : [ 32.5204 ]
-    5 : [ 81.2121 ]
-    6 : [ 39.4754 ]
-    7 : [ 69.5926 ]
-    8 : [ 92.2457 ]
-    9 : [ 29.5163 ]
+    Predicted values by IDW:     [ y0       ]
+    0 : [ 103.085  ]
+    1 : [  64.0418 ]
+    2 : [  58.1907 ]
+    3 : [  93.8698 ]
+    4 : [  62.7286 ]
+    5 : [  68.555  ]
+    6 : [  32.2116 ]
+    7 : [  32.045  ]
+    8 : [  52.3522 ]
+    9 : [  28.2239 ]
 
 
 
@@ -161,7 +161,7 @@ Use of Inverse Distance Weighting
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.004 seconds)
+   **Total running time of the script:** ( 0 minutes  0.005 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_IDW.py:

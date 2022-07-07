@@ -108,13 +108,13 @@ Use of Radial Basis Function
        Training ...
           Initializing linear solver ...
              Performing LU fact. (40 x 40 mtx) ...
-             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001171
-          Initializing linear solver - done. Time (sec):  0.0001907
+             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001369
+          Initializing linear solver - done. Time (sec):  0.0002503
           Solving linear system (col. 0) ...
              Back solving (40 x 40 mtx) ...
-             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000505
-          Solving linear system (col. 0) - done. Time (sec):  0.0001123
-       Training - done. Time (sec):  0.0006969
+             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000722
+          Solving linear system (col. 0) - done. Time (sec):  0.0001750
+       Training - done. Time (sec):  0.0009832
 
 
 
@@ -147,21 +147,21 @@ Use of Radial Basis Function
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000262
+       Predicting - done. Time (sec):  0.0000360
    
-       Prediction time/pt. (sec) :  0.0000026
+       Prediction time/pt. (sec) :  0.0000036
    
-    Predicted values by RBF:     [ y0          ]
-    0 : [ 31.9643     ]
-    1 : [  3.7943     ]
-    2 : [  0.674791   ]
-    3 : [  3.2857     ]
-    4 : [  0.471939   ]
-    5 : [  0.00820876 ]
-    6 : [  0.0442016  ]
-    7 : [ 66.1159     ]
-    8 : [ 20.7681     ]
-    9 : [  2.18992    ]
+    Predicted values by RBF:     [ y0       ]
+    0 : [ 35.2721  ]
+    1 : [  2.67559 ]
+    2 : [  6.31407 ]
+    3 : [ 12.9884  ]
+    4 : [  1.36599 ]
+    5 : [ 17.4325  ]
+    6 : [  5.77621 ]
+    7 : [ 51.0924  ]
+    8 : [  9.07344 ]
+    9 : [ 33.3374  ]
 
 
 
@@ -169,7 +169,7 @@ Use of Radial Basis Function
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.005 seconds)
+   **Total running time of the script:** ( 0 minutes  0.007 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_RBF.py:

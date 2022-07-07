@@ -106,7 +106,7 @@ Use of Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0659966
+       Training - done. Time (sec):  0.1120815
 
 
 
@@ -146,32 +146,32 @@ Use of Kriging
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002396
+       Predicting - done. Time (sec):  0.0002887
    
-       Prediction time/pt. (sec) :  0.0000240
+       Prediction time/pt. (sec) :  0.0000289
    
     Predicted values by KRG:     [ y0        ]
-    0 : [  24.5352  ]
-    1 : [ 117.783   ]
-    2 : [  95.6864  ]
-    3 : [  97.1727  ]
-    4 : [  53.4356  ]
-    5 : [  64.1836  ]
-    6 : [  39.929   ]
-    7 : [   4.56665 ]
-    8 : [ 144.218   ]
-    9 : [  26.162   ]
+    0 : [   9.18609 ]
+    1 : [  39.2838  ]
+    2 : [  24.3462  ]
+    3 : [  19.0839  ]
+    4 : [ 106.19    ]
+    5 : [ 131.834   ]
+    6 : [  96.156   ]
+    7 : [ 117.41    ]
+    8 : [  46.8977  ]
+    9 : [  45.4365  ]
     Predicted variances values by KRG:     [ y0          ]
-    0 : [ 6.12643e-08 ]
-    1 : [ 3.78649e-07 ]
-    2 : [ 1.31517e-07 ]
-    3 : [ 7.6573e-08  ]
-    4 : [ 1.11705e-07 ]
-    5 : [ 9.01099e-08 ]
-    6 : [ 7.12267e-08 ]
-    7 : [ 7.92964e-08 ]
-    8 : [ 2.84681e-07 ]
-    9 : [ 8.82838e-08 ]
+    0 : [ 3.58153e-08 ]
+    1 : [ 7.1628e-08  ]
+    2 : [ 4.99988e-08 ]
+    3 : [ 1.75856e-07 ]
+    4 : [ 1.74606e-07 ]
+    5 : [ 4.31676e-07 ]
+    6 : [ 8.87858e-08 ]
+    7 : [ 1.0112e-06  ]
+    8 : [ 4.32848e-08 ]
+    9 : [ 1.26167e-07 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -179,21 +179,21 @@ Use of Kriging
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001829
+       Predicting - done. Time (sec):  0.0002573
    
-       Prediction time/pt. (sec) :  0.0000183
+       Prediction time/pt. (sec) :  0.0000257
    
     Predicted mean first derivatives by KRG:     [ y0        ]
-    0 : [  -4.70982 ]
-    1 : [  10.5091  ]
-    2 : [  18.1496  ]
-    3 : [ -18.4843  ]
-    4 : [   6.69166 ]
-    5 : [  12.7454  ]
-    6 : [   1.89073 ]
-    7 : [  -2.39427 ]
-    8 : [ -15.9846  ]
-    9 : [ -10.1417  ]
+    0 : [   4.54235 ]
+    1 : [  11.1987  ]
+    2 : [   2.12086 ]
+    3 : [  -8.61949 ]
+    4 : [  12.1646  ]
+    5 : [ -13.3011  ]
+    6 : [ -19.5795  ]
+    7 : [  18.7766  ]
+    8 : [  -5.06002 ]
+    9 : [  -1.10953 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -201,21 +201,21 @@ Use of Kriging
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001802
+       Predicting - done. Time (sec):  0.0002568
    
-       Prediction time/pt. (sec) :  0.0000180
+       Prediction time/pt. (sec) :  0.0000257
    
     Predicted mean second derivatives by KRG:     [ y0        ]
-    0 : [   8.71536 ]
-    1 : [ -18.9912  ]
-    2 : [   7.30329 ]
-    3 : [  -6.8571  ]
-    4 : [ -12.9987  ]
-    5 : [  -9.71039 ]
-    6 : [  12.4957  ]
-    7 : [  -3.54018 ]
-    8 : [  17.926   ]
-    9 : [   1.33913 ]
+    0 : [   4.01376 ]
+    1 : [  -5.63256 ]
+    2 : [  -9.63772 ]
+    3 : [   1.42834 ]
+    4 : [  16.6366  ]
+    5 : [ -18.7184  ]
+    6 : [  -1.12229 ]
+    7 : [  10.8212  ]
+    8 : [ -12.7275  ]
+    9 : [  13.4357  ]
 
 
 
@@ -223,7 +223,7 @@ Use of Kriging
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.073 seconds)
+   **Total running time of the script:** ( 0 minutes  0.121 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KRG.py:

@@ -108,17 +108,17 @@ Use of Gradient Enhanced Neural Network Model
      Training
    
        Training ...
-    epoch = 0, mini-batch = 0, avg cost =  1.440
-    epoch = 1, mini-batch = 0, avg cost =  1.146
-    epoch = 2, mini-batch = 0, avg cost =  1.135
-    epoch = 3, mini-batch = 0, avg cost =  1.131
-    epoch = 4, mini-batch = 0, avg cost =  1.131
-    epoch = 5, mini-batch = 0, avg cost =  1.131
-    epoch = 6, mini-batch = 0, avg cost =  1.131
-    epoch = 7, mini-batch = 0, avg cost =  1.131
-    epoch = 8, mini-batch = 0, avg cost =  1.131
-    epoch = 9, mini-batch = 0, avg cost =  1.131
-       Training - done. Time (sec):  3.0340338
+    epoch = 0, mini-batch = 0, avg cost =  1.779
+    epoch = 1, mini-batch = 0, avg cost =  1.370
+    epoch = 2, mini-batch = 0, avg cost =  1.349
+    epoch = 3, mini-batch = 0, avg cost =  1.340
+    epoch = 4, mini-batch = 0, avg cost =  1.335
+    epoch = 5, mini-batch = 0, avg cost =  1.335
+    epoch = 6, mini-batch = 0, avg cost =  1.335
+    epoch = 7, mini-batch = 0, avg cost =  1.335
+    epoch = 8, mini-batch = 0, avg cost =  1.335
+    epoch = 9, mini-batch = 0, avg cost =  1.335
+       Training - done. Time (sec):  4.7156301
 
 
 
@@ -156,21 +156,21 @@ Use of Gradient Enhanced Neural Network Model
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000813
+       Predicting - done. Time (sec):  0.0000892
    
-       Prediction time/pt. (sec) :  0.0000081
+       Prediction time/pt. (sec) :  0.0000089
    
     Predicted values by GENN:     [ y0       ]
-    0 : [  90.41   ]
-    1 : [ 100.449  ]
-    2 : [  66.9118 ]
-    3 : [  94.8051 ]
-    4 : [  49.7754 ]
-    5 : [  42.8745 ]
-    6 : [  58.7195 ]
-    7 : [  94.6766 ]
-    8 : [  34.5603 ]
-    9 : [  34.4831 ]
+    0 : [  42.7161 ]
+    1 : [ 145.038  ]
+    2 : [  82.2966 ]
+    3 : [  55.2115 ]
+    4 : [  36.3937 ]
+    5 : [  32.8535 ]
+    6 : [ 111.024  ]
+    7 : [ 106.793  ]
+    8 : [  33.5687 ]
+    9 : [  72.4333 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -178,21 +178,21 @@ Use of Gradient Enhanced Neural Network Model
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002217
+       Predicting - done. Time (sec):  0.0002763
    
-       Prediction time/pt. (sec) :  0.0000222
+       Prediction time/pt. (sec) :  0.0000276
    
-    Predicted mean first derivatives by GENN:     [ y0         ]
-    0 : [ 18.4284    ]
-    1 : [ -7.6942    ]
-    2 : [ -8.4201    ]
-    3 : [ -3.82895   ]
-    4 : [  5.26701   ]
-    5 : [  4.43495   ]
-    6 : [ -2.92289   ]
-    7 : [ 18.4975    ]
-    8 : [ -0.0523709 ]
-    9 : [  0.0826637 ]
+    Predicted mean first derivatives by GENN:     [ y0          ]
+    0 : [  -6.23017   ]
+    1 : [  10.757     ]
+    2 : [ -16.3517    ]
+    3 : [  -7.56132   ]
+    4 : [  -0.427268  ]
+    5 : [  -0.0504771 ]
+    6 : [ -15.4021    ]
+    7 : [  10.3207    ]
+    8 : [  -0.682113  ]
+    9 : [   6.46967   ]
     ___________________________________________________________________________
    
      Evaluation
@@ -200,21 +200,21 @@ Use of Gradient Enhanced Neural Network Model
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002027
+       Predicting - done. Time (sec):  0.0003722
    
-       Prediction time/pt. (sec) :  0.0000203
+       Prediction time/pt. (sec) :  0.0000372
    
-    Predicted mean second derivatives by GENN:     [ y0         ]
-    0 : [   4.86487  ]
-    1 : [ -16.0177   ]
-    2 : [ -11.6874   ]
-    3 : [ -16.6536   ]
-    4 : [  -1.95686  ]
-    5 : [   0.603853 ]
-    6 : [  -9.42564  ]
-    7 : [   2.25172  ]
-    8 : [  -0.137098 ]
-    9 : [  -0.020513 ]
+    Predicted mean second derivatives by GENN:     [ y0          ]
+    0 : [   1.37016   ]
+    1 : [ -19.811     ]
+    2 : [   1.1871    ]
+    3 : [  -4.87361   ]
+    4 : [  -1.14603   ]
+    5 : [  -0.0449252 ]
+    6 : [   2.39947   ]
+    7 : [ -15.8024    ]
+    8 : [   0.150805  ]
+    9 : [  -8.84608   ]
 
 
 
@@ -222,7 +222,7 @@ Use of Gradient Enhanced Neural Network Model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.040 seconds)
+   **Total running time of the script:** ( 0 minutes  4.723 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_GENN.py:

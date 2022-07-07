@@ -137,7 +137,7 @@ Use of Multi-Fidelity Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0546439
+       Training - done. Time (sec):  0.1281824
 
 
 
@@ -146,7 +146,7 @@ Use of Multi-Fidelity Kriging
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-66
+.. GENERATED FROM PYTHON SOURCE LINES 58-74
 
 .. code-block:: default
 
@@ -159,6 +159,14 @@ Use of Multi-Fidelity Kriging
     print('Predicted values by MFK:',otmfkprediction(xv_e))    
     print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
     print('Predicted mean first derivatives by MFK:',otmfkfirstderivatives(xv_e))  
+
+
+    """
+    Use of Multi-Fidelity Kriging
+    -----------------------------
+    """
+
+
 
 
 
@@ -175,32 +183,32 @@ Use of Multi-Fidelity Kriging
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003538
+       Predicting - done. Time (sec):  0.0005214
    
-       Prediction time/pt. (sec) :  0.0000354
+       Prediction time/pt. (sec) :  0.0000521
    
     Predicted values by MFK:     [ y0          ]
-    0 : [  0.00407305 ]
+    0 : [  0.00407291 ]
     1 : [ 10.9228     ]
     2 : [  0.413308   ]
     3 : [  0.689917   ]
     4 : [  5.20032    ]
     5 : [ -0.878463   ]
-    6 : [  0.554562   ]
-    7 : [ -0.147648   ]
+    6 : [  0.554561   ]
+    7 : [ -0.147649   ]
     8 : [ -5.4338     ]
     9 : [ -1.91136    ]
     Predicted variances values by MFK:     [ y0          ]
-    0 : [ 2.67142e-09 ]
-    1 : [ 6.70922e-07 ]
-    2 : [ 4.97544e-09 ]
-    3 : [ 3.0945e-09  ]
-    4 : [ 2.25231e-07 ]
-    5 : [ 4.5071e-09  ]
-    6 : [ 3.67607e-06 ]
-    7 : [ 2.68668e-09 ]
-    8 : [ 8.19581e-09 ]
-    9 : [ 2.7629e-09  ]
+    0 : [ 2.69515e-09 ]
+    1 : [ 6.71287e-07 ]
+    2 : [ 4.93707e-09 ]
+    3 : [ 3.05466e-09 ]
+    4 : [ 2.25287e-07 ]
+    5 : [ 4.44374e-09 ]
+    6 : [ 3.67629e-06 ]
+    7 : [ 2.66354e-09 ]
+    8 : [ 8.41956e-09 ]
+    9 : [ 2.82229e-09 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -208,29 +216,393 @@ Use of Multi-Fidelity Kriging
           # eval points. : 10
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003111
+       Predicting - done. Time (sec):  0.0005281
    
-       Prediction time/pt. (sec) :  0.0000311
+       Prediction time/pt. (sec) :  0.0000528
    
     Predicted mean first derivatives by MFK:     [ y0         ]
-    0 : [   0.569445 ]
+    0 : [   0.569446 ]
     1 : [ 124.681    ]
     2 : [   8.91344  ]
     3 : [ -15.6019   ]
     4 : [ 140.383    ]
     5 : [   6.75721  ]
-    6 : [ -36.8524   ]
+    6 : [ -36.8525   ]
     7 : [   5.518    ]
     8 : [  37.8547   ]
     9 : [ -47.0549   ]
 
+    '\nUse of Multi-Fidelity Kriging\n-----------------------------\n'
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-81
+
+.. code-block:: default
+
+
+    from smt.applications import MFK,NestedLHS
+    import numpy as np
+    import otsmt
+    import matplotlib.pyplot as plt
+    import openturns as ot
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 82-83
+
+| Definition of Initial data
+
+.. GENERATED FROM PYTHON SOURCE LINES 83-111
+
+.. code-block:: default
+
+
+       
+    # Construction of the DOE
+    # low fidelity model
+    def lf_function(x):
+
+        return (
+            0.5 * ((x * 6 - 2) ** 2) * np.sin((x * 6 - 2) * 2)
+            + (x - 0.5) * 10.0
+            - 5
+        )
+
+    # high fidelity model
+    def hf_function(x):
+
+        return ((x * 6 - 2) ** 2) * np.sin((x * 6 - 2) * 2)
+
+    # Problem set up
+    xlimits = np.array([[0.0, 1.0]])
+    xdoes = NestedLHS(nlevel=2, xlimits=xlimits, random_state=0)
+    xt_c, xt_e = xdoes(4)
+
+    # Evaluate the HF and LF functions
+    yt_e = hf_function(xt_e)
+    yt_c = lf_function(xt_c)
+
+    xv_e = np.linspace(xlimits[0][0],xlimits[0][1],50)[:,np.newaxis]
+    yv_e  = hf_function(xv_e)
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2845: RuntimeWarning: Degrees of freedom <= 0 for slice
+      c = cov(x, y, rowvar, dtype=dtype)
+    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: divide by zero encountered in divide
+      c *= np.true_divide(1, fact)
+    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: invalid value encountered in multiply
+      c *= np.true_divide(1, fact)
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 112-113
+
+| Training of smt model for  Multi-Fidelity Kriging
+
+.. GENERATED FROM PYTHON SOURCE LINES 113-124
+
+.. code-block:: default
+
+
+    sm_mfk = MFK(theta0=xt_e.shape[1] * [1.0])    
+
+    # low-fidelity dataset names being integers from 0 to level-1
+    sm_mfk.set_training_values(xt_c, yt_c, name=0)
+    # high-fidelity dataset without name
+    sm_mfk.set_training_values(xt_e, yt_e)
+    
+    # train the model
+    sm_mfk.train()
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ___________________________________________________________________________
+   
+                                        MFK
+    ___________________________________________________________________________
+   
+     Problem size
+   
+          # training points.        : 4
+   
+    ___________________________________________________________________________
+   
+     Training
+   
+       Training ...
+       Training - done. Time (sec):  0.0941670
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 125-126
+
+| Creation of OpenTurns PythonFunction for prediction
+
+.. GENERATED FROM PYTHON SOURCE LINES 126-154
+
+.. code-block:: default
+
+
+    otmfk = otsmt.smt2ot(sm_mfk)
+    otmfkprediction = otmfk.getPredictionFunction()
+    otmfkpvariances = otmfk.getConditionalVarianceFunction()
+    otmfkfirstderivatives = otmfk.getPredictionDerivativesFunction(0)
+
+    print('Predicted values by MFK:',otmfkprediction(xv_e))    
+    print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
+    print('Predicted mean first derivatives by MFK:',otmfkfirstderivatives(xv_e))  
+
+
+
+
+    plt.figure()
+
+    plt.plot(xt_c,yt_c,'o',label='DoE low fidelity')
+    plt.plot(xt_e,yt_e,'o',label='DoE high fidelity')
+
+    plt.plot(xv_e,otmfkprediction(xv_e),label='high fidelity prediction')
+    plt.plot(xv_e,yv_e,label='high fidelity true function')
+    plt.legend()
+
+
+
+
+
+
+
+
+
+
+.. image-sg:: /auto_example/images/sphx_glr_plot_example_MFK_001.png
+   :alt: plot example MFK
+   :srcset: /auto_example/images/sphx_glr_plot_example_MFK_001.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ___________________________________________________________________________
+   
+     Evaluation
+   
+          # eval points. : 50
+   
+       Predicting ...
+       Predicting - done. Time (sec):  0.0005474
+   
+       Prediction time/pt. (sec) :  0.0000109
+   
+    Predicted values by MFK:      [ y0           ]
+     0 : [  3.42355     ]
+     1 : [  2.2167      ]
+     2 : [  1.1873      ]
+     3 : [  0.356157    ]
+     4 : [ -0.267391    ]
+     5 : [ -0.686631    ]
+     6 : [ -0.917408    ]
+     7 : [ -0.986754    ]
+     8 : [ -0.930268    ]
+     9 : [ -0.788478    ]
+    10 : [ -0.602583    ]
+    11 : [ -0.410063    ]
+    12 : [ -0.240744    ]
+    13 : [ -0.113842    ]
+    14 : [ -0.036433    ]
+    15 : [ -0.00362926  ]
+    16 : [ -0.000483726 ]
+    17 : [ -0.00542781  ]
+    18 : [  0.00520831  ]
+    19 : [  0.0522195   ]
+    20 : [  0.148824    ]
+    21 : [  0.296966    ]
+    22 : [  0.485236    ]
+    23 : [  0.688838    ]
+    24 : [  0.871717    ]
+    25 : [  0.990703    ]
+    26 : [  1.00119     ]
+    27 : [  0.863663    ]
+    28 : [  0.550219    ]
+    29 : [  0.0502107   ]
+    30 : [ -0.625779    ]
+    31 : [ -1.44422     ]
+    32 : [ -2.34951     ]
+    33 : [ -3.26739     ]
+    34 : [ -4.11071     ]
+    35 : [ -4.78679     ]
+    36 : [ -5.20574     ]
+    37 : [ -5.28881     ]
+    38 : [ -4.97591     ]
+    39 : [ -4.23153     ]
+    40 : [ -3.04853     ]
+    41 : [ -1.44951     ]
+    42 : [  0.514421    ]
+    43 : [  2.76712     ]
+    44 : [  5.21279     ]
+    45 : [  7.74276     ]
+    46 : [ 10.2429      ]
+    47 : [ 12.6011      ]
+    48 : [ 14.7141      ]
+    49 : [ 16.4936      ]
+    Predicted variances values by MFK:      [ y0          ]
+     0 : [ 9.90081     ]
+     1 : [ 5.27376     ]
+     2 : [ 2.49959     ]
+     3 : [ 1.01474     ]
+     4 : [ 0.329233    ]
+     5 : [ 0.0730553   ]
+     6 : [ 0.00636073  ]
+     7 : [ 0.000396252 ]
+     8 : [ 0.00283708  ]
+     9 : [ 0.00200491  ]
+    10 : [ 0.000265454 ]
+    11 : [ 0.000221339 ]
+    12 : [ 0.00137719  ]
+    13 : [ 0.00201049  ]
+    14 : [ 0.0014392   ]
+    15 : [ 0.000417773 ]
+    16 : [ 1.71366e-06 ]
+    17 : [ 0.000410939 ]
+    18 : [ 0.000965775 ]
+    19 : [ 0.000942859 ]
+    20 : [ 0.00037485  ]
+    21 : [ 2.47758e-07 ]
+    22 : [ 0.000454181 ]
+    23 : [ 0.00153048  ]
+    24 : [ 0.00228382  ]
+    25 : [ 0.00194201  ]
+    26 : [ 0.000777127 ]
+    27 : [ 7.20172e-06 ]
+    28 : [ 0.000627767 ]
+    29 : [ 0.00217422  ]
+    30 : [ 0.00281691  ]
+    31 : [ 0.0013567   ]
+    32 : [ 4.18883e-05 ]
+    33 : [ 0.00587208  ]
+    34 : [ 0.0283565   ]
+    35 : [ 0.0737672   ]
+    36 : [ 0.138675    ]
+    37 : [ 0.207124    ]
+    38 : [ 0.254749    ]
+    39 : [ 0.259514    ]
+    40 : [ 0.214326    ]
+    41 : [ 0.134267    ]
+    42 : [ 0.0525589   ]
+    43 : [ 0.00477755  ]
+    44 : [ 0.00795159  ]
+    45 : [ 0.0464996   ]
+    46 : [ 0.0771927   ]
+    47 : [ 0.0594805   ]
+    48 : [ 0.00731502  ]
+    49 : [ 0.0480656   ]
+    ___________________________________________________________________________
+   
+     Evaluation
+   
+          # eval points. : 50
+   
+       Predicting ...
+       Predicting - done. Time (sec):  0.0005732
+   
+       Prediction time/pt. (sec) :  0.0000115
+   
+    Predicted mean first derivatives by MFK:      [ y0           ]
+     0 : [ -63.0218     ]
+     1 : [ -55.0005     ]
+     2 : [ -45.7093     ]
+     3 : [ -35.6656     ]
+     4 : [ -25.469      ]
+     5 : [ -15.747      ]
+     6 : [  -7.09207    ]
+     7 : [   0.00239146 ]
+     8 : [   5.19873    ]
+     9 : [   8.35656    ]
+    10 : [   9.55183    ]
+    11 : [   9.06908    ]
+    12 : [   7.36594    ]
+    13 : [   5.01284    ]
+    14 : [   2.61473    ]
+    15 : [   0.724962   ]
+    16 : [  -0.236789   ]
+    17 : [  -0.0502768  ]
+    18 : [   1.26637    ]
+    19 : [   3.45178    ]
+    20 : [   6.0331     ]
+    21 : [   8.39165    ]
+    22 : [   9.8546     ]
+    23 : [   9.80052    ]
+    24 : [   7.76435    ]
+    25 : [   3.52653    ]
+    26 : [  -2.82696    ]
+    27 : [ -10.8833     ]
+    28 : [ -19.9245     ]
+    29 : [ -28.9913     ]
+    30 : [ -36.9812     ]
+    31 : [ -42.7692     ]
+    32 : [ -45.3377     ]
+    33 : [ -43.897      ]
+    34 : [ -37.9846     ]
+    35 : [ -27.53       ]
+    36 : [ -12.8777     ]
+    37 : [   5.23232    ]
+    38 : [  25.7251     ]
+    39 : [  47.2837     ]
+    40 : [  68.4642     ]
+    41 : [  87.8195     ]
+    42 : [ 104.02       ]
+    43 : [ 115.957      ]
+    44 : [ 122.826      ]
+    45 : [ 124.174      ]
+    46 : [ 119.919      ]
+    47 : [ 110.337      ]
+    48 : [  96.0164     ]
+    49 : [  77.8015     ]
+    ___________________________________________________________________________
+   
+     Evaluation
+   
+          # eval points. : 50
+   
+       Predicting ...
+       Predicting - done. Time (sec):  0.0005062
+   
+       Prediction time/pt. (sec) :  0.0000101
+   
+
+    <matplotlib.legend.Legend object at 0x7f9ea5a2db20>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.170 seconds)
+   **Total running time of the script:** ( 0 minutes  0.610 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFK.py:

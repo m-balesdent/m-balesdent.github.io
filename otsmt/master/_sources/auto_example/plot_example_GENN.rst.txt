@@ -21,7 +21,7 @@
 Use of Gradient Enhanced Neural Network Model
 ---------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-16
+.. GENERATED FROM PYTHON SOURCE LINES 7-17
 
 .. code-block:: default
 
@@ -32,6 +32,7 @@ Use of Gradient Enhanced Neural Network Model
 
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -41,11 +42,11 @@ Use of Gradient Enhanced Neural Network Model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-18
+.. GENERATED FROM PYTHON SOURCE LINES 18-19
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-32
+.. GENERATED FROM PYTHON SOURCE LINES 19-33
 
 .. code-block:: default
 
@@ -61,7 +62,7 @@ Use of Gradient Enhanced Neural Network Model
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -70,11 +71,11 @@ Use of Gradient Enhanced Neural Network Model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 | Training of smt model for Neural Network
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-40
+.. GENERATED FROM PYTHON SOURCE LINES 35-41
 
 .. code-block:: default
 
@@ -108,26 +109,26 @@ Use of Gradient Enhanced Neural Network Model
      Training
    
        Training ...
-    epoch = 0, mini-batch = 0, avg cost =  1.779
-    epoch = 1, mini-batch = 0, avg cost =  1.370
-    epoch = 2, mini-batch = 0, avg cost =  1.349
-    epoch = 3, mini-batch = 0, avg cost =  1.340
-    epoch = 4, mini-batch = 0, avg cost =  1.335
-    epoch = 5, mini-batch = 0, avg cost =  1.335
-    epoch = 6, mini-batch = 0, avg cost =  1.335
-    epoch = 7, mini-batch = 0, avg cost =  1.335
-    epoch = 8, mini-batch = 0, avg cost =  1.335
-    epoch = 9, mini-batch = 0, avg cost =  1.335
-       Training - done. Time (sec):  4.7156301
+    epoch = 0, mini-batch = 0, avg cost =  1.308
+    epoch = 1, mini-batch = 0, avg cost =  1.160
+    epoch = 2, mini-batch = 0, avg cost =  0.999
+    epoch = 3, mini-batch = 0, avg cost =  0.653
+    epoch = 4, mini-batch = 0, avg cost =  0.625
+    epoch = 5, mini-batch = 0, avg cost =  0.612
+    epoch = 6, mini-batch = 0, avg cost =  0.612
+    epoch = 7, mini-batch = 0, avg cost =  0.611
+    epoch = 8, mini-batch = 0, avg cost =  0.610
+    epoch = 9, mini-batch = 0, avg cost =  0.610
+       Training - done. Time (sec):  4.9321151
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-42
+.. GENERATED FROM PYTHON SOURCE LINES 42-43
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-50
+.. GENERATED FROM PYTHON SOURCE LINES 43-51
 
 .. code-block:: default
 
@@ -153,68 +154,44 @@ Use of Gradient Enhanced Neural Network Model
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000892
+       Predicting - done. Time (sec):  0.0000968
    
-       Prediction time/pt. (sec) :  0.0000089
+       Prediction time/pt. (sec) :  0.0000484
    
-    Predicted values by GENN:     [ y0       ]
-    0 : [  42.7161 ]
-    1 : [ 145.038  ]
-    2 : [  82.2966 ]
-    3 : [  55.2115 ]
-    4 : [  36.3937 ]
-    5 : [  32.8535 ]
-    6 : [ 111.024  ]
-    7 : [ 106.793  ]
-    8 : [  33.5687 ]
-    9 : [  72.4333 ]
+    Predicted values by GENN:     [ y0      ]
+    0 : [ 21.3786 ]
+    1 : [ 24.7186 ]
     ___________________________________________________________________________
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002763
+       Predicting - done. Time (sec):  0.0003128
    
-       Prediction time/pt. (sec) :  0.0000276
+       Prediction time/pt. (sec) :  0.0001564
    
-    Predicted mean first derivatives by GENN:     [ y0          ]
-    0 : [  -6.23017   ]
-    1 : [  10.757     ]
-    2 : [ -16.3517    ]
-    3 : [  -7.56132   ]
-    4 : [  -0.427268  ]
-    5 : [  -0.0504771 ]
-    6 : [ -15.4021    ]
-    7 : [  10.3207    ]
-    8 : [  -0.682113  ]
-    9 : [   6.46967   ]
+    Predicted mean first derivatives by GENN:     [ y0       ]
+    0 : [ 0.473038 ]
+    1 : [ 2.41013  ]
     ___________________________________________________________________________
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003722
+       Predicting - done. Time (sec):  0.0002818
    
-       Prediction time/pt. (sec) :  0.0000372
+       Prediction time/pt. (sec) :  0.0001409
    
-    Predicted mean second derivatives by GENN:     [ y0          ]
-    0 : [   1.37016   ]
-    1 : [ -19.811     ]
-    2 : [   1.1871    ]
-    3 : [  -4.87361   ]
-    4 : [  -1.14603   ]
-    5 : [  -0.0449252 ]
-    6 : [   2.39947   ]
-    7 : [ -15.8024    ]
-    8 : [   0.150805  ]
-    9 : [  -8.84608   ]
+    Predicted mean second derivatives by GENN:     [ y0      ]
+    0 : [ 1.24065 ]
+    1 : [ 2.87642 ]
 
 
 
@@ -222,7 +199,7 @@ Use of Gradient Enhanced Neural Network Model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.723 seconds)
+   **Total running time of the script:** ( 0 minutes  4.939 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_GENN.py:

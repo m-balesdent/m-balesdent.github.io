@@ -21,7 +21,7 @@
 Use of Radial Basis Function
 ----------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
@@ -31,6 +31,7 @@ Use of Radial Basis Function
     from smt.surrogate_models import RBF
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -40,11 +41,11 @@ Use of Radial Basis Function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -60,7 +61,7 @@ Use of Radial Basis Function
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -69,11 +70,11 @@ Use of Radial Basis Function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for Radial Basis Function
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
 
@@ -108,22 +109,22 @@ Use of Radial Basis Function
        Training ...
           Initializing linear solver ...
              Performing LU fact. (40 x 40 mtx) ...
-             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001369
-          Initializing linear solver - done. Time (sec):  0.0002503
+             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001259
+          Initializing linear solver - done. Time (sec):  0.0002282
           Solving linear system (col. 0) ...
              Back solving (40 x 40 mtx) ...
-             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000722
-          Solving linear system (col. 0) - done. Time (sec):  0.0001750
-       Training - done. Time (sec):  0.0009832
+             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000687
+          Solving linear system (col. 0) - done. Time (sec):  0.0001574
+       Training - done. Time (sec):  0.0009160
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -144,24 +145,16 @@ Use of Radial Basis Function
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000360
+       Predicting - done. Time (sec):  0.0000341
    
-       Prediction time/pt. (sec) :  0.0000036
+       Prediction time/pt. (sec) :  0.0000170
    
-    Predicted values by RBF:     [ y0       ]
-    0 : [ 35.2721  ]
-    1 : [  2.67559 ]
-    2 : [  6.31407 ]
-    3 : [ 12.9884  ]
-    4 : [  1.36599 ]
-    5 : [ 17.4325  ]
-    6 : [  5.77621 ]
-    7 : [ 51.0924  ]
-    8 : [  9.07344 ]
-    9 : [ 33.3374  ]
+    Predicted values by RBF:     [ y0        ]
+    0 : [ 0.120488  ]
+    1 : [ 0.0886029 ]
 
 
 
@@ -169,7 +162,7 @@ Use of Radial Basis Function
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.007 seconds)
+   **Total running time of the script:** ( 0 minutes  0.006 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_RBF.py:

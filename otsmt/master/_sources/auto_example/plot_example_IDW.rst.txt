@@ -21,7 +21,7 @@
 Use of Inverse Distance Weighting
 ---------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
@@ -31,6 +31,7 @@ Use of Inverse Distance Weighting
     from smt.surrogate_models import IDW
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -40,11 +41,11 @@ Use of Inverse Distance Weighting
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -60,7 +61,7 @@ Use of Inverse Distance Weighting
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -69,11 +70,11 @@ Use of Inverse Distance Weighting
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for Inverse Distance Weighting
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
 
@@ -106,16 +107,16 @@ Use of Inverse Distance Weighting
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0001767
+       Training - done. Time (sec):  0.0001919
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -136,24 +137,16 @@ Use of Inverse Distance Weighting
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000372
+       Predicting - done. Time (sec):  0.0000339
    
-       Prediction time/pt. (sec) :  0.0000037
+       Prediction time/pt. (sec) :  0.0000169
    
-    Predicted values by IDW:     [ y0       ]
-    0 : [ 103.085  ]
-    1 : [  64.0418 ]
-    2 : [  58.1907 ]
-    3 : [  93.8698 ]
-    4 : [  62.7286 ]
-    5 : [  68.555  ]
-    6 : [  32.2116 ]
-    7 : [  32.045  ]
-    8 : [  52.3522 ]
-    9 : [  28.2239 ]
+    Predicted values by IDW:     [ y0      ]
+    0 : [ 9.87247 ]
+    1 : [ 7.58818 ]
 
 
 

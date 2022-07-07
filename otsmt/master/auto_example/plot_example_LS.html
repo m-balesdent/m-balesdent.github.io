@@ -110,6 +110,7 @@ to download the full example code</p>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -125,7 +126,7 @@ to download the full example code</p>
     <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
     <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a> <span class="o">=</span> <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class"><span class="n">ot</span><span class="o">.</span><span class="n">Sample</span></a><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">],[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">]])</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -151,7 +152,7 @@ ___________________________________________________________________________
  Training
 
    Training ...
-   Training - done. Time (sec):  0.0018144
+   Training - done. Time (sec):  0.0036294
 </pre></div>
 </div>
 <div class="line-block">
@@ -160,7 +161,7 @@ ___________________________________________________________________________
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otls</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_ls</span><span class="p">)</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otlsprediction</span></a> <span class="o">=</span> <span class="n">otls</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by LS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otlsprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by LS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otlsprediction</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -168,27 +169,19 @@ ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0001340
+   Predicting - done. Time (sec):  0.0001516
 
-   Prediction time/pt. (sec) :  0.0000134
+   Prediction time/pt. (sec) :  0.0000758
 
 Predicted values by LS:     [ y0      ]
-0 : [ 68.7246 ]
-1 : [ 66.5874 ]
-2 : [ 55.9492 ]
-3 : [ 61.7109 ]
-4 : [ 65.8885 ]
-5 : [ 64.3426 ]
-6 : [ 74.3712 ]
-7 : [ 71.6728 ]
-8 : [ 73.1202 ]
-9 : [ 63.287  ]
+0 : [ 67.7622 ]
+1 : [ 69.1101 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.008 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.010 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-ls-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/d288237c54c0c5e1ca5a58e2a80cad75/plot_example_LS.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_LS.py</span></code></a></p>

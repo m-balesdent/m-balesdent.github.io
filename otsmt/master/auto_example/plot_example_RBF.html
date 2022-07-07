@@ -109,6 +109,7 @@ to download the full example code</p>
 <span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">RBF</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -124,7 +125,7 @@ to download the full example code</p>
     <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
     <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a> <span class="o">=</span> <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class"><span class="n">ot</span><span class="o">.</span><span class="n">Sample</span></a><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">],[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">]])</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -152,13 +153,13 @@ ___________________________________________________________________________
    Training ...
       Initializing linear solver ...
          Performing LU fact. (40 x 40 mtx) ...
-         Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001369
-      Initializing linear solver - done. Time (sec):  0.0002503
+         Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001259
+      Initializing linear solver - done. Time (sec):  0.0002282
       Solving linear system (col. 0) ...
          Back solving (40 x 40 mtx) ...
-         Back solving (40 x 40 mtx) - done. Time (sec):  0.0000722
-      Solving linear system (col. 0) - done. Time (sec):  0.0001750
-   Training - done. Time (sec):  0.0009832
+         Back solving (40 x 40 mtx) - done. Time (sec):  0.0000687
+      Solving linear system (col. 0) - done. Time (sec):  0.0001574
+   Training - done. Time (sec):  0.0009160
 </pre></div>
 </div>
 <div class="line-block">
@@ -166,7 +167,7 @@ ___________________________________________________________________________
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otrbf</span> <span class="o">=</span>  <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_rbf</span><span class="p">)</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otrbfprediction</span></a> <span class="o">=</span> <span class="n">otrbf</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by RBF:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otrbfprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by RBF:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otrbfprediction</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -174,27 +175,19 @@ ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0000360
+   Predicting - done. Time (sec):  0.0000341
 
-   Prediction time/pt. (sec) :  0.0000036
+   Prediction time/pt. (sec) :  0.0000170
 
-Predicted values by RBF:     [ y0       ]
-0 : [ 35.2721  ]
-1 : [  2.67559 ]
-2 : [  6.31407 ]
-3 : [ 12.9884  ]
-4 : [  1.36599 ]
-5 : [ 17.4325  ]
-6 : [  5.77621 ]
-7 : [ 51.0924  ]
-8 : [  9.07344 ]
-9 : [ 33.3374  ]
+Predicted values by RBF:     [ y0        ]
+0 : [ 0.120488  ]
+1 : [ 0.0886029 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.007 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.006 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-rbf-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/0dfd7890722ebfafd9a1ff235d21f3ca/plot_example_RBF.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_RBF.py</span></code></a></p>

@@ -110,6 +110,7 @@ to download the full example code</p>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -125,7 +126,7 @@ to download the full example code</p>
     <span class="n">yd</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">kx</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
     <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a> <span class="o">=</span> <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class"><span class="n">ot</span><span class="o">.</span><span class="n">Sample</span></a><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.</span><span class="p">],[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">]])</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -152,17 +153,17 @@ ___________________________________________________________________________
  Training
 
    Training ...
-epoch = 0, mini-batch = 0, avg cost =  1.779
-epoch = 1, mini-batch = 0, avg cost =  1.370
-epoch = 2, mini-batch = 0, avg cost =  1.349
-epoch = 3, mini-batch = 0, avg cost =  1.340
-epoch = 4, mini-batch = 0, avg cost =  1.335
-epoch = 5, mini-batch = 0, avg cost =  1.335
-epoch = 6, mini-batch = 0, avg cost =  1.335
-epoch = 7, mini-batch = 0, avg cost =  1.335
-epoch = 8, mini-batch = 0, avg cost =  1.335
-epoch = 9, mini-batch = 0, avg cost =  1.335
-   Training - done. Time (sec):  4.7156301
+epoch = 0, mini-batch = 0, avg cost =  1.308
+epoch = 1, mini-batch = 0, avg cost =  1.160
+epoch = 2, mini-batch = 0, avg cost =  0.999
+epoch = 3, mini-batch = 0, avg cost =  0.653
+epoch = 4, mini-batch = 0, avg cost =  0.625
+epoch = 5, mini-batch = 0, avg cost =  0.612
+epoch = 6, mini-batch = 0, avg cost =  0.612
+epoch = 7, mini-batch = 0, avg cost =  0.611
+epoch = 8, mini-batch = 0, avg cost =  0.610
+epoch = 9, mini-batch = 0, avg cost =  0.610
+   Training - done. Time (sec):  4.9321151
 </pre></div>
 </div>
 <div class="line-block">
@@ -173,9 +174,9 @@ epoch = 9, mini-batch = 0, avg cost =  1.335
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennfirstderivatives</span></a> <span class="o">=</span> <span class="n">otgenn</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennsecondderivatives</span></a> <span class="o">=</span> <span class="n">otgenn</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennprediction</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennfirstderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean second derivatives by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennsecondderivatives</span></a><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennprediction</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennfirstderivatives</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean second derivatives by GENN:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otgennsecondderivatives</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -183,71 +184,47 @@ epoch = 9, mini-batch = 0, avg cost =  1.335
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0000892
+   Predicting - done. Time (sec):  0.0000968
 
-   Prediction time/pt. (sec) :  0.0000089
+   Prediction time/pt. (sec) :  0.0000484
 
-Predicted values by GENN:     [ y0       ]
-0 : [  42.7161 ]
-1 : [ 145.038  ]
-2 : [  82.2966 ]
-3 : [  55.2115 ]
-4 : [  36.3937 ]
-5 : [  32.8535 ]
-6 : [ 111.024  ]
-7 : [ 106.793  ]
-8 : [  33.5687 ]
-9 : [  72.4333 ]
+Predicted values by GENN:     [ y0      ]
+0 : [ 21.3786 ]
+1 : [ 24.7186 ]
 ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0002763
+   Predicting - done. Time (sec):  0.0003128
 
-   Prediction time/pt. (sec) :  0.0000276
+   Prediction time/pt. (sec) :  0.0001564
 
-Predicted mean first derivatives by GENN:     [ y0          ]
-0 : [  -6.23017   ]
-1 : [  10.757     ]
-2 : [ -16.3517    ]
-3 : [  -7.56132   ]
-4 : [  -0.427268  ]
-5 : [  -0.0504771 ]
-6 : [ -15.4021    ]
-7 : [  10.3207    ]
-8 : [  -0.682113  ]
-9 : [   6.46967   ]
+Predicted mean first derivatives by GENN:     [ y0       ]
+0 : [ 0.473038 ]
+1 : [ 2.41013  ]
 ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003722
+   Predicting - done. Time (sec):  0.0002818
 
-   Prediction time/pt. (sec) :  0.0000372
+   Prediction time/pt. (sec) :  0.0001409
 
-Predicted mean second derivatives by GENN:     [ y0          ]
-0 : [   1.37016   ]
-1 : [ -19.811     ]
-2 : [   1.1871    ]
-3 : [  -4.87361   ]
-4 : [  -1.14603   ]
-5 : [  -0.0449252 ]
-6 : [   2.39947   ]
-7 : [ -15.8024    ]
-8 : [   0.150805  ]
-9 : [  -8.84608   ]
+Predicted mean second derivatives by GENN:     [ y0      ]
+0 : [ 1.24065 ]
+1 : [ 2.87642 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.723 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.939 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-genn-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/e970550ba3813fa7a48b314fb5ca12be/plot_example_GENN.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_GENN.py</span></code></a></p>

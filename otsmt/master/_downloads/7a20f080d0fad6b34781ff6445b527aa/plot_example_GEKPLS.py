@@ -10,6 +10,7 @@ from smt.problems import Sphere
 from smt.surrogate_models import GEKPLS
 import numpy as np
 import otsmt
+import openturns as ot
 
 
 # %%
@@ -26,7 +27,7 @@ for i in range(2):
     yd = fun(xt, kx=i)
     yt = np.concatenate((yt, yd), axis=1)
        
-xv= sampling(10)
+xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 # %%
 # | Training of smt model for GEKPLS

@@ -31,7 +31,7 @@ Use of Second-order polynomial approximation
     from smt.surrogate_models import QP
     import numpy as np
     import otsmt
-
+    import openturns as ot
 
 
 
@@ -60,7 +60,7 @@ Use of Second-order polynomial approximation
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -106,7 +106,7 @@ Use of Second-order polynomial approximation
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0010202
+       Training - done. Time (sec):  0.0015030
 
 
 
@@ -136,24 +136,16 @@ Use of Second-order polynomial approximation
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000846
+       Predicting - done. Time (sec):  0.0000575
    
-       Prediction time/pt. (sec) :  0.0000085
+       Prediction time/pt. (sec) :  0.0000287
    
-    Predicted values by QP:     [ y0        ]
-    0 : [  94.4853  ]
-    1 : [  61.8893  ]
-    2 : [  99.9605  ]
-    3 : [  35.8341  ]
-    4 : [  39.2937  ]
-    5 : [ 119.774   ]
-    6 : [   1.07924 ]
-    7 : [  69.2253  ]
-    8 : [  85.2234  ]
-    9 : [  90.7592  ]
+    Predicted values by QP:     [ y0   ]
+    0 : [ 1.01 ]
+    1 : [ 5    ]
 
 
 
@@ -161,7 +153,7 @@ Use of Second-order polynomial approximation
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.365 seconds)
+   **Total running time of the script:** ( 0 minutes  0.450 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_QP.py:

@@ -5,36 +5,36 @@
 
 Computation times
 =================
-**00:10.464** total execution time for **auto_example** files:
+**00:11.038** total execution time for **auto_example** files:
 
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_GENN.py` (``plot_example_GENN.py``)                                 | 00:04.723 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_GENN.py` (``plot_example_GENN.py``)                                 | 00:04.939 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_MixedVariableKriging.py` (``plot_example_MixedVariableKriging.py``) | 00:02.144 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_MixedVariableKriging.py` (``plot_example_MixedVariableKriging.py``) | 00:02.233 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_MOE.py` (``plot_example_MOE.py``)                                   | 00:01.361 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_MOE.py` (``plot_example_MOE.py``)                                   | 00:01.561 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_MFK.py` (``plot_example_MFK.py``)                                   | 00:00.610 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_MFK.py` (``plot_example_MFK.py``)                                   | 00:00.547 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_MFKPLSK.py` (``plot_example_MFKPLSK.py``)                           | 00:00.369 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_QP.py` (``plot_example_QP.py``)                                     | 00:00.450 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_QP.py` (``plot_example_QP.py``)                                     | 00:00.365 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_MFKPLSK.py` (``plot_example_MFKPLSK.py``)                           | 00:00.380 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_MFKPLS.py` (``plot_example_MFKPLS.py``)                             | 00:00.263 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_MFKPLS.py` (``plot_example_MFKPLS.py``)                             | 00:00.276 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_example_plot_example_GEKPLS.py` (``plot_example_GEKPLS.py``)                             | 00:00.233 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_KPLSK.py` (``plot_example_KPLSK.py``)                               | 00:00.169 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_KPLSK.py` (``plot_example_KPLSK.py``)                               | 00:00.174 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_KRG.py` (``plot_example_KRG.py``)                                   | 00:00.121 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_KRG.py` (``plot_example_KRG.py``)                                   | 00:00.134 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_KPLS.py` (``plot_example_KPLS.py``)                                 | 00:00.063 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_KPLS.py` (``plot_example_KPLS.py``)                                 | 00:00.068 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_RMTB.py` (``plot_example_RMTB.py``)                                 | 00:00.022 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_RMTB.py` (``plot_example_RMTB.py``)                                 | 00:00.020 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_LS.py` (``plot_example_LS.py``)                                     | 00:00.008 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_LS.py` (``plot_example_LS.py``)                                     | 00:00.010 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_example_RBF.py` (``plot_example_RBF.py``)                                   | 00:00.007 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_example_RBF.py` (``plot_example_RBF.py``)                                   | 00:00.006 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_example_plot_example_IDW.py` (``plot_example_IDW.py``)                                   | 00:00.005 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------+-----------+--------+

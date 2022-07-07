@@ -21,7 +21,7 @@
 Use of Regularized minimal-energy tensor-product splines
 --------------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
@@ -31,6 +31,7 @@ Use of Regularized minimal-energy tensor-product splines
     from smt.surrogate_models import RMTB
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -40,11 +41,11 @@ Use of Regularized minimal-energy tensor-product splines
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -60,7 +61,7 @@ Use of Regularized minimal-energy tensor-product splines
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -69,11 +70,11 @@ Use of Regularized minimal-energy tensor-product splines
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for Regularized minimal-energy tensor-product splines
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-44
+.. GENERATED FROM PYTHON SOURCE LINES 34-45
 
 .. code-block:: default
 
@@ -114,37 +115,37 @@ Use of Regularized minimal-energy tensor-product splines
        Training ...
           Pre-computing matrices ...
              Computing dof2coeff ...
-             Computing dof2coeff - done. Time (sec):  0.0000031
+             Computing dof2coeff - done. Time (sec):  0.0000033
              Initializing Hessian ...
-             Initializing Hessian - done. Time (sec):  0.0004725
+             Initializing Hessian - done. Time (sec):  0.0004556
              Computing energy terms ...
-             Computing energy terms - done. Time (sec):  0.0064409
+             Computing energy terms - done. Time (sec):  0.0068316
              Computing approximation terms ...
-             Computing approximation terms - done. Time (sec):  0.0006995
-          Pre-computing matrices - done. Time (sec):  0.0080099
+             Computing approximation terms - done. Time (sec):  0.0005195
+          Pre-computing matrices - done. Time (sec):  0.0081813
           Solving for degrees of freedom ...
              Solving initial startup problem (n=400) ...
                 Solving for output 0 ...
-                   Iteration (num., iy, grad. norm, func.) :   0   0 2.557607446e+02 1.204632357e+05
-                   Iteration (num., iy, grad. norm, func.) :   0   0 1.096625128e-13 8.422191896e-13
-                Solving for output 0 - done. Time (sec):  0.0063584
-             Solving initial startup problem (n=400) - done. Time (sec):  0.0064893
+                   Iteration (num., iy, grad. norm, func.) :   0   0 2.590539341e+02 1.168028045e+05
+                   Iteration (num., iy, grad. norm, func.) :   0   0 1.087981805e-13 6.483076437e-13
+                Solving for output 0 - done. Time (sec):  0.0056787
+             Solving initial startup problem (n=400) - done. Time (sec):  0.0058064
              Solving nonlinear problem (n=400) ...
                 Solving for output 0 ...
-                   Iteration (num., iy, grad. norm, func.) :   0   0 2.575975381e-15 8.422191896e-13
-                Solving for output 0 - done. Time (sec):  0.0003872
-             Solving nonlinear problem (n=400) - done. Time (sec):  0.0004995
-          Solving for degrees of freedom - done. Time (sec):  0.0071785
-       Training - done. Time (sec):  0.0157511
+                   Iteration (num., iy, grad. norm, func.) :   0   0 2.277386822e-15 6.483076437e-13
+                Solving for output 0 - done. Time (sec):  0.0003719
+             Solving nonlinear problem (n=400) - done. Time (sec):  0.0004776
+          Solving for degrees of freedom - done. Time (sec):  0.0064671
+       Training - done. Time (sec):  0.0151649
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 46-47
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
 .. code-block:: default
 
@@ -165,24 +166,16 @@ Use of Regularized minimal-energy tensor-product splines
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003791
+       Predicting - done. Time (sec):  0.0003698
    
-       Prediction time/pt. (sec) :  0.0000379
+       Prediction time/pt. (sec) :  0.0001849
    
-    Predicted values by RMTB:     [ y0         ]
-    0 : [  68.6688   ]
-    1 : [  79.0747   ]
-    2 : [   0.619749 ]
-    3 : [  19.1159   ]
-    4 : [ 109.565    ]
-    5 : [   8.3286   ]
-    6 : [  15.2707   ]
-    7 : [  17.9657   ]
-    8 : [   3.43831  ]
-    9 : [  24.7208   ]
+    Predicted values by RMTB:     [ y0       ]
+    0 : [ 0.198493 ]
+    1 : [ 0.45439  ]
 
 
 
@@ -190,7 +183,7 @@ Use of Regularized minimal-energy tensor-product splines
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.022 seconds)
+   **Total running time of the script:** ( 0 minutes  0.020 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_RMTB.py:

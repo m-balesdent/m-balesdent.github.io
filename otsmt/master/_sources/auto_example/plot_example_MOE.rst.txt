@@ -21,7 +21,7 @@
 Use of Mixture of Experts
 -------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
@@ -31,6 +31,7 @@ Use of Mixture of Experts
     from smt.applications import MOE
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -40,11 +41,11 @@ Use of Mixture of Experts
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -60,7 +61,7 @@ Use of Mixture of Experts
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -69,11 +70,11 @@ Use of Mixture of Experts
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for  Mixture of Experts
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
 
@@ -92,35 +93,35 @@ Use of Mixture of Experts
 
  .. code-block:: none
 
-    Kriging 0.0007403421439633462
-    LS 5.848665544905341
-    QP 1.4210854715202004e-14
-    KPLS 0.0008390914239448932
-    KPLSK 0.0007403421439633462
-    RBF 20.670756654005807
-    RMTC 2.2670910077130237
-    RMTB 1.3773171109650306
-    IDW 5.688592565113094
+    Kriging 0.0032378978384344226
+    LS 32.174135348800704
+    QP 2.4202861936828413e-14
+    KPLS 0.0017597108647493531
+    KPLSK 0.0032378978384344226
+    RBF 1.037477046906054
+    RMTC 0.23342948730774493
+    RMTB 0.10978643267723642
+    IDW 6.564092890610692
     Best expert = QP
-    Kriging 0.003135468107982541
-    LS 37.81684854013545
-    QP 4.2750823912715883e-13
-    KPLS 0.005939924792706084
-    KPLSK 0.003135468107982541
-    RBF 116.51514972595531
-    RMTC 13.137363028944549
-    RMTB 8.331622147004804
-    IDW 25.710469845513256
+    Kriging 0.08705892622673578
+    LS 85.42497892455006
+    QP 5.418791023696945e-13
+    KPLS 0.10485873499303168
+    KPLSK 0.08705892622673578
+    RBF 213.70773826002218
+    RMTC 54.72182830825611
+    RMTB 50.10891150284193
+    IDW 69.61530633074865
     Best expert = QP
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-44
+.. GENERATED FROM PYTHON SOURCE LINES 41-45
 
 .. code-block:: default
 
@@ -138,17 +139,9 @@ Use of Mixture of Experts
 
  .. code-block:: none
 
-    Predicted values by MOE:     [ y0        ]
-    0 : [  69.2633  ]
-    1 : [   4.18728 ]
-    2 : [  68.6209  ]
-    3 : [  36.62    ]
-    4 : [  83.7847  ]
-    5 : [  75.272   ]
-    6 : [ 133.813   ]
-    7 : [  48.1329  ]
-    8 : [  36.0539  ]
-    9 : [  78.9163  ]
+    Predicted values by MOE:     [ y0   ]
+    0 : [ 1.01 ]
+    1 : [ 5    ]
 
 
 
@@ -156,7 +149,7 @@ Use of Mixture of Experts
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.361 seconds)
+   **Total running time of the script:** ( 0 minutes  1.561 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MOE.py:

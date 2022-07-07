@@ -21,7 +21,7 @@
 Use of GEKPLS
 -------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
@@ -31,6 +31,7 @@ Use of GEKPLS
     from smt.surrogate_models import GEKPLS
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -40,11 +41,11 @@ Use of GEKPLS
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-31
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -60,7 +61,7 @@ Use of GEKPLS
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -69,11 +70,11 @@ Use of GEKPLS
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
+.. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for GEKPLS
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-49
+.. GENERATED FROM PYTHON SOURCE LINES 34-50
 
 .. code-block:: default
 
@@ -145,16 +146,16 @@ Use of GEKPLS
       warnings.warn(f"Y residual is constant at iteration {k}")
     /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
       warnings.warn(f"Y residual is constant at iteration {k}")
-       Training - done. Time (sec):  0.2208798
+       Training - done. Time (sec):  0.2258205
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-51
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-61
+.. GENERATED FROM PYTHON SOURCE LINES 52-62
 
 .. code-block:: default
 
@@ -178,50 +179,18 @@ Use of GEKPLS
 
  .. code-block:: none
 
-    Predicted values by GEKPLS:     [ y0       ]
-    0 : [  93.105  ]
-    1 : [  64.1237 ]
-    2 : [  64.2603 ]
-    3 : [ 127.059  ]
-    4 : [  14.2643 ]
-    5 : [  95.0688 ]
-    6 : [  67.4823 ]
-    7 : [  47.3631 ]
-    8 : [  23.6927 ]
-    9 : [  35.5208 ]
+    Predicted values by GEKPLS:     [ y0      ]
+    0 : [ 1.00998 ]
+    1 : [ 4.99998 ]
     Predicted variances values by GEKPLS:     [ y0          ]
-    0 : [ 7.46153e-08 ]
-    1 : [ 8.74016e-09 ]
-    2 : [ 5.5567e-08  ]
-    3 : [ 2.24595e-06 ]
-    4 : [ 5.2752e-09  ]
-    5 : [ 1.47344e-07 ]
-    6 : [ 1.66253e-09 ]
-    7 : [ 1.5204e-09  ]
-    8 : [ 2.18539e-09 ]
-    9 : [ 1.91924e-08 ]
-    Predicted mean first derivatives by GEKPLS:     [ y0        ]
-    0 : [  -9.16021 ]
-    1 : [  12.2028  ]
-    2 : [   6.71192 ]
-    3 : [ -17.928   ]
-    4 : [  -4.53055 ]
-    5 : [  19.2215  ]
-    6 : [  -2.27572 ]
-    7 : [ -13.7632  ]
-    8 : [   1.71947 ]
-    9 : [  10.29    ]
-    Predicted mean second derivatives by GEKPLS:     [ y0         ]
-    0 : [ -16.9857   ]
-    1 : [  10.3725   ]
-    2 : [ -14.5599   ]
-    3 : [  13.6655   ]
-    4 : [   6.04408  ]
-    5 : [  -3.28743  ]
-    6 : [  16.2711   ]
-    7 : [   0.165184 ]
-    8 : [  -9.58198  ]
-    9 : [  -6.0165   ]
+    0 : [ 1.67879e-09 ]
+    1 : [ 1.9478e-09  ]
+    Predicted mean first derivatives by GEKPLS:     [ y0       ]
+    0 : [ 0.199999 ]
+    1 : [ 2        ]
+    Predicted mean second derivatives by GEKPLS:     [ y0 ]
+    0 : [ 2  ]
+    1 : [ 4  ]
 
 
 

@@ -29,8 +29,8 @@ Use of Multi-Fidelity Kriging
     from smt.applications import MFK,NestedLHS
     import numpy as np
     import otsmt
-
-
+    import matplotlib.pyplot as plt
+    import openturns as ot
 
 
 
@@ -66,14 +66,14 @@ Use of Multi-Fidelity Kriging
     # Problem set up
     xlimits = np.array([[0.0, 1.0]])
     xdoes = NestedLHS(nlevel=2, xlimits=xlimits, random_state=0)
-    xt_c, xt_e = xdoes(7)
+    xt_c, xt_e = xdoes(4)
 
     # Evaluate the HF and LF functions
     yt_e = hf_function(xt_e)
     yt_c = lf_function(xt_c)
 
-    xv_c, xv_e = xdoes(10)
-    
+    xv_e = np.linspace(xlimits[0][0],xlimits[0][1],50)[:,np.newaxis]
+    yv_e  = hf_function(xv_e)
 
 
 
@@ -130,14 +130,14 @@ Use of Multi-Fidelity Kriging
    
      Problem size
    
-          # training points.        : 7
+          # training points.        : 4
    
     ___________________________________________________________________________
    
      Training
    
        Training ...
-       Training - done. Time (sec):  0.1281824
+       Training - done. Time (sec):  0.2302783
 
 
 
@@ -146,7 +146,7 @@ Use of Multi-Fidelity Kriging
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-74
+.. GENERATED FROM PYTHON SOURCE LINES 58-81
 
 .. code-block:: default
 
@@ -159,235 +159,15 @@ Use of Multi-Fidelity Kriging
     print('Predicted values by MFK:',otmfkprediction(xv_e))    
     print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
     print('Predicted mean first derivatives by MFK:',otmfkfirstderivatives(xv_e))  
-
-
-    """
-    Use of Multi-Fidelity Kriging
-    -----------------------------
-    """
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    ___________________________________________________________________________
-   
-     Evaluation
-   
-          # eval points. : 10
-   
-       Predicting ...
-       Predicting - done. Time (sec):  0.0005214
-   
-       Prediction time/pt. (sec) :  0.0000521
-   
-    Predicted values by MFK:     [ y0          ]
-    0 : [  0.00407291 ]
-    1 : [ 10.9228     ]
-    2 : [  0.413308   ]
-    3 : [  0.689917   ]
-    4 : [  5.20032    ]
-    5 : [ -0.878463   ]
-    6 : [  0.554561   ]
-    7 : [ -0.147649   ]
-    8 : [ -5.4338     ]
-    9 : [ -1.91136    ]
-    Predicted variances values by MFK:     [ y0          ]
-    0 : [ 2.69515e-09 ]
-    1 : [ 6.71287e-07 ]
-    2 : [ 4.93707e-09 ]
-    3 : [ 3.05466e-09 ]
-    4 : [ 2.25287e-07 ]
-    5 : [ 4.44374e-09 ]
-    6 : [ 3.67629e-06 ]
-    7 : [ 2.66354e-09 ]
-    8 : [ 8.41956e-09 ]
-    9 : [ 2.82229e-09 ]
-    ___________________________________________________________________________
-   
-     Evaluation
-   
-          # eval points. : 10
-   
-       Predicting ...
-       Predicting - done. Time (sec):  0.0005281
-   
-       Prediction time/pt. (sec) :  0.0000528
-   
-    Predicted mean first derivatives by MFK:     [ y0         ]
-    0 : [   0.569446 ]
-    1 : [ 124.681    ]
-    2 : [   8.91344  ]
-    3 : [ -15.6019   ]
-    4 : [ 140.383    ]
-    5 : [   6.75721  ]
-    6 : [ -36.8525   ]
-    7 : [   5.518    ]
-    8 : [  37.8547   ]
-    9 : [ -47.0549   ]
-
-    '\nUse of Multi-Fidelity Kriging\n-----------------------------\n'
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
-
-.. code-block:: default
-
-
-    from smt.applications import MFK,NestedLHS
-    import numpy as np
-    import otsmt
-    import matplotlib.pyplot as plt
-    import openturns as ot
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 82-83
-
-| Definition of Initial data
-
-.. GENERATED FROM PYTHON SOURCE LINES 83-111
-
-.. code-block:: default
-
-
-       
-    # Construction of the DOE
-    # low fidelity model
-    def lf_function(x):
-
-        return (
-            0.5 * ((x * 6 - 2) ** 2) * np.sin((x * 6 - 2) * 2)
-            + (x - 0.5) * 10.0
-            - 5
-        )
-
-    # high fidelity model
-    def hf_function(x):
-
-        return ((x * 6 - 2) ** 2) * np.sin((x * 6 - 2) * 2)
-
-    # Problem set up
-    xlimits = np.array([[0.0, 1.0]])
-    xdoes = NestedLHS(nlevel=2, xlimits=xlimits, random_state=0)
-    xt_c, xt_e = xdoes(4)
-
-    # Evaluate the HF and LF functions
-    yt_e = hf_function(xt_e)
-    yt_c = lf_function(xt_c)
-
-    xv_e = np.linspace(xlimits[0][0],xlimits[0][1],50)[:,np.newaxis]
-    yv_e  = hf_function(xv_e)
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2845: RuntimeWarning: Degrees of freedom <= 0 for slice
-      c = cov(x, y, rowvar, dtype=dtype)
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: divide by zero encountered in divide
-      c *= np.true_divide(1, fact)
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/numpy/lib/function_base.py:2704: RuntimeWarning: invalid value encountered in multiply
-      c *= np.true_divide(1, fact)
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 112-113
-
-| Training of smt model for  Multi-Fidelity Kriging
-
-.. GENERATED FROM PYTHON SOURCE LINES 113-124
-
-.. code-block:: default
-
-
-    sm_mfk = MFK(theta0=xt_e.shape[1] * [1.0])    
-
-    # low-fidelity dataset names being integers from 0 to level-1
-    sm_mfk.set_training_values(xt_c, yt_c, name=0)
-    # high-fidelity dataset without name
-    sm_mfk.set_training_values(xt_e, yt_e)
-    
-    # train the model
-    sm_mfk.train()
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    ___________________________________________________________________________
-   
-                                        MFK
-    ___________________________________________________________________________
-   
-     Problem size
-   
-          # training points.        : 4
-   
-    ___________________________________________________________________________
-   
-     Training
-   
-       Training ...
-       Training - done. Time (sec):  0.0941670
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 125-126
-
-| Creation of OpenTurns PythonFunction for prediction
-
-.. GENERATED FROM PYTHON SOURCE LINES 126-154
-
-.. code-block:: default
-
-
-    otmfk = otsmt.smt2ot(sm_mfk)
-    otmfkprediction = otmfk.getPredictionFunction()
-    otmfkpvariances = otmfk.getConditionalVarianceFunction()
-    otmfkfirstderivatives = otmfk.getPredictionDerivativesFunction(0)
-
-    print('Predicted values by MFK:',otmfkprediction(xv_e))    
-    print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
-    print('Predicted mean first derivatives by MFK:',otmfkfirstderivatives(xv_e))  
-
-
-
 
     plt.figure()
 
-    plt.plot(xt_c,yt_c,'o',label='DoE low fidelity')
-    plt.plot(xt_e,yt_e,'o',label='DoE high fidelity')
+    plt.plot(xt_c,yt_c,'o',label='low fidelity data')
+    plt.plot(xt_e,yt_e,'o',label='high fidelity data')
 
     plt.plot(xv_e,otmfkprediction(xv_e),label='high fidelity prediction')
     plt.plot(xv_e,yv_e,label='high fidelity true function')
     plt.legend()
-
-
 
 
 
@@ -415,9 +195,9 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005474
+       Predicting - done. Time (sec):  0.0006607
    
-       Prediction time/pt. (sec) :  0.0000109
+       Prediction time/pt. (sec) :  0.0000132
    
     Predicted values by MFK:      [ y0           ]
      0 : [  3.42355     ]
@@ -528,9 +308,9 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005732
+       Predicting - done. Time (sec):  0.0005460
    
-       Prediction time/pt. (sec) :  0.0000115
+       Prediction time/pt. (sec) :  0.0000109
    
     Predicted mean first derivatives by MFK:      [ y0           ]
      0 : [ -63.0218     ]
@@ -590,19 +370,19 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005062
+       Predicting - done. Time (sec):  0.0005517
    
-       Prediction time/pt. (sec) :  0.0000101
+       Prediction time/pt. (sec) :  0.0000110
    
 
-    <matplotlib.legend.Legend object at 0x7f9ea5a2db20>
+    <matplotlib.legend.Legend object at 0x7f6ec6a598e0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.610 seconds)
+   **Total running time of the script:** ( 0 minutes  0.547 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFK.py:

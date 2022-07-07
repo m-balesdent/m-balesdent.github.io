@@ -21,7 +21,7 @@
 Use of Least Squares Surrogate Model
 ------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-16
+.. GENERATED FROM PYTHON SOURCE LINES 7-17
 
 .. code-block:: default
 
@@ -32,6 +32,7 @@ Use of Least Squares Surrogate Model
 
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -41,11 +42,11 @@ Use of Least Squares Surrogate Model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-18
+.. GENERATED FROM PYTHON SOURCE LINES 18-19
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-32
+.. GENERATED FROM PYTHON SOURCE LINES 19-33
 
 .. code-block:: default
 
@@ -61,7 +62,7 @@ Use of Least Squares Surrogate Model
         yd = fun(xt, kx=i)
         yt = np.concatenate((yt, yd), axis=1)
        
-    xv= sampling(10)
+    xv = ot.Sample([[0.1,1.],[1.,2.]])    
     
 
 
@@ -70,11 +71,11 @@ Use of Least Squares Surrogate Model
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 34-35
 
 | Training of smt model for Least Squares
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-39
+.. GENERATED FROM PYTHON SOURCE LINES 35-40
 
 .. code-block:: default
 
@@ -107,16 +108,16 @@ Use of Least Squares Surrogate Model
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0018144
+       Training - done. Time (sec):  0.0036294
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 41-42
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-45
+.. GENERATED FROM PYTHON SOURCE LINES 42-46
 
 .. code-block:: default
 
@@ -138,24 +139,16 @@ Use of Least Squares Surrogate Model
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001340
+       Predicting - done. Time (sec):  0.0001516
    
-       Prediction time/pt. (sec) :  0.0000134
+       Prediction time/pt. (sec) :  0.0000758
    
     Predicted values by LS:     [ y0      ]
-    0 : [ 68.7246 ]
-    1 : [ 66.5874 ]
-    2 : [ 55.9492 ]
-    3 : [ 61.7109 ]
-    4 : [ 65.8885 ]
-    5 : [ 64.3426 ]
-    6 : [ 74.3712 ]
-    7 : [ 71.6728 ]
-    8 : [ 73.1202 ]
-    9 : [ 63.287  ]
+    0 : [ 67.7622 ]
+    1 : [ 69.1101 ]
 
 
 
@@ -163,7 +156,7 @@ Use of Least Squares Surrogate Model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.008 seconds)
+   **Total running time of the script:** ( 0 minutes  0.010 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_LS.py:

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ot-smt documentation &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/Icon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="User manual" href="user_manual/user_manual.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="user_manual/user_manual.html">Doc</a></li>
+    <li><a href="examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="#">
+    <h1>
+      <img src="_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otak
+    </h1>
+    <h2> Module otak </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="user_manual/user_manual.html" title="User manual"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">ot-SMT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ot-smt documentation</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">ot-smt documentation</a><ul>
+<li><a class="reference internal" href="#user-documentation">User documentation</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="user_manual/user_manual.html"
+                          title="next chapter">User manual</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ot-smt-documentation">
+<h1>ot-smt documentation<a class="headerlink" href="#ot-smt-documentation" title="Permalink to this heading">¶</a></h1>
+<a class="reference internal image-reference" href="_images/krg_Test_test_krg.png"><img alt="_images/krg_Test_test_krg.png" class="align-left" src="_images/krg_Test_test_krg.png" style="width: 320.0px; height: 240.0px;" /></a>
+<p>otSMT is a module of OpenTURNS implementing some methods to bind surrogate models from <a class="reference external" href="https://smt.readthedocs.io/en/latest/">SMT</a> into OpenTURNS PythonFunctions.</p>
+<p>Available surrogate models from SMT:</p>
+<ul class="simple">
+<li><p>Least Squares Model</p></li>
+<li><p>Neural Network Model</p></li>
+<li><p>Radial Basis Function</p></li>
+<li><p>Inverse Distance Weighting</p></li>
+<li><p>Regularized minimal-energy tensor-product splines</p></li>
+<li><p>Second-order polynomial approximation</p></li>
+<li><p>Kriging</p></li>
+<li><p>Kriging Partial Least Squares (KPLS)</p></li>
+<li><p>KPLSK</p></li>
+<li><p>Gradient Enhanced KPLS</p></li>
+<li><p>Mixtures of Experts</p></li>
+</ul>
+<p>Available multifidelity surrogate models from SMT:</p>
+<ul class="simple">
+<li><p>Multi-Fidelity Kriging</p></li>
+<li><p>Multi-Fidelity KPLS</p></li>
+<li><p>Multi-Fidelity KPLSK</p></li>
+</ul>
+<p>Available mixed-variables surrogate models from SMT:</p>
+<ul class="simple">
+<li><p>Mixed Integer Kriging with Continuous Relaxation</p></li>
+<li><p>Mixed Integer Kriging with Gower Distance</p></li>
+</ul>
+<p>Documentation about SMT can be found <a class="reference external" href="https://smt.readthedocs.io/en/latest/">here</a></p>
+<div class="section" id="user-documentation">
+<h2>User documentation<a class="headerlink" href="#user-documentation" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/user_manual.html">User manual</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_example/example_LS.html">Use of Least Squares Surrogate Model</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Bouhlel, M. A., Hwang, J. T., Bartoli, N., Lafage, R., Morlier, J., &amp; Martins, J. R. (2019). A Python surrogate modeling framework with derivatives. Advances in Engineering Software, 135, 102662.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="user_manual/user_manual.html" title="User manual"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">ot-SMT 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ot-smt documentation</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

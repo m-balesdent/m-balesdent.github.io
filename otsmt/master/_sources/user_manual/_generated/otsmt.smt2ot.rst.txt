@@ -1,0 +1,10 @@
+﻿smt2ot
+============
+
+.. currentmodule:: otsmt
+
+.. autoclass:: smt2ot
+
+   
+   .. automethod:: __init__
+   

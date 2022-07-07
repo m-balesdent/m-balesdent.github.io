@@ -106,7 +106,7 @@ Use of Second-order polynomial approximation
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0015695
+       Training - done. Time (sec):  0.0003321
 
 
 
@@ -139,9 +139,9 @@ Use of Second-order polynomial approximation
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000606
+       Predicting - done. Time (sec):  0.0000505
    
-       Prediction time/pt. (sec) :  0.0000303
+       Prediction time/pt. (sec) :  0.0000253
    
     Predicted values by QP:     [ y0   ]
     0 : [ 1.01 ]
@@ -153,7 +153,7 @@ Use of Second-order polynomial approximation
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.367 seconds)
+   **Total running time of the script:** ( 0 minutes  0.316 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_QP.py:

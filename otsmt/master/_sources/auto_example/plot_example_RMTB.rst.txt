@@ -115,28 +115,28 @@ Use of Regularized minimal-energy tensor-product splines
        Training ...
           Pre-computing matrices ...
              Computing dof2coeff ...
-             Computing dof2coeff - done. Time (sec):  0.0000031
+             Computing dof2coeff - done. Time (sec):  0.0000024
              Initializing Hessian ...
-             Initializing Hessian - done. Time (sec):  0.0004144
+             Initializing Hessian - done. Time (sec):  0.0003498
              Computing energy terms ...
-             Computing energy terms - done. Time (sec):  0.0068378
+             Computing energy terms - done. Time (sec):  0.0049219
              Computing approximation terms ...
-             Computing approximation terms - done. Time (sec):  0.0005479
-          Pre-computing matrices - done. Time (sec):  0.0082068
+             Computing approximation terms - done. Time (sec):  0.0003765
+          Pre-computing matrices - done. Time (sec):  0.0059257
           Solving for degrees of freedom ...
              Solving initial startup problem (n=400) ...
                 Solving for output 0 ...
-                   Iteration (num., iy, grad. norm, func.) :   0   0 2.673648269e+02 1.207539045e+05
-                   Iteration (num., iy, grad. norm, func.) :   0   0 6.032975541e-14 6.737080615e-13
-                Solving for output 0 - done. Time (sec):  0.0062656
-             Solving initial startup problem (n=400) - done. Time (sec):  0.0063944
+                   Iteration (num., iy, grad. norm, func.) :   0   0 2.696466782e+02 1.271640508e+05
+                   Iteration (num., iy, grad. norm, func.) :   0   0 1.334068147e-13 7.746096919e-13
+                Solving for output 0 - done. Time (sec):  0.0035262
+             Solving initial startup problem (n=400) - done. Time (sec):  0.0036206
              Solving nonlinear problem (n=400) ...
                 Solving for output 0 ...
-                   Iteration (num., iy, grad. norm, func.) :   0   0 2.307667493e-15 6.737080615e-13
-                Solving for output 0 - done. Time (sec):  0.0004361
-             Solving nonlinear problem (n=400) - done. Time (sec):  0.0005510
-          Solving for degrees of freedom - done. Time (sec):  0.0071380
-       Training - done. Time (sec):  0.0158820
+                   Iteration (num., iy, grad. norm, func.) :   0   0 2.481294318e-15 7.746096919e-13
+                Solving for output 0 - done. Time (sec):  0.0002379
+             Solving nonlinear problem (n=400) - done. Time (sec):  0.0003154
+          Solving for degrees of freedom - done. Time (sec):  0.0040681
+       Training - done. Time (sec):  0.0104055
 
 
 
@@ -169,13 +169,13 @@ Use of Regularized minimal-energy tensor-product splines
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003488
+       Predicting - done. Time (sec):  0.0002837
    
-       Prediction time/pt. (sec) :  0.0001744
+       Prediction time/pt. (sec) :  0.0001419
    
-    Predicted values by RMTB:     [ y0        ]
-    0 : [ 0.0876509 ]
-    1 : [ 3.98198   ]
+    Predicted values by RMTB:     [ y0      ]
+    0 : [ 2.68422 ]
+    1 : [ 3.76683 ]
 
 
 
@@ -183,7 +183,7 @@ Use of Regularized minimal-energy tensor-product splines
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.021 seconds)
+   **Total running time of the script:** ( 0 minutes  0.014 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_RMTB.py:

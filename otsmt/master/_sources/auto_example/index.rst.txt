@@ -9,6 +9,27 @@
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Second-order polynomial approximation">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_QP_thumb.png
+     :alt: Use of Second-order polynomial approximation
+
+     :ref:`sphx_glr_auto_example_example_QP.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_QP
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Use of Least Squares Surrogate Model">
 
 .. only:: html
@@ -27,6 +48,279 @@
    :hidden:
 
    /auto_example/example_LS
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Radial Basis Function">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_RBF_thumb.png
+     :alt: Use of Radial Basis Function
+
+     :ref:`sphx_glr_auto_example_example_RBF.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_RBF
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Inverse Distance Weighting">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_IDW_thumb.png
+     :alt: Use of Inverse Distance Weighting
+
+     :ref:`sphx_glr_auto_example_example_IDW.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_IDW
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Mixture of Experts">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_MOE_thumb.png
+     :alt: Use of Mixture of Experts
+
+     :ref:`sphx_glr_auto_example_example_MOE.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_MOE
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Regularized minimal-energy tensor-product splines">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_RMTB_thumb.png
+     :alt: Use of Regularized minimal-energy tensor-product splines
+
+     :ref:`sphx_glr_auto_example_example_RMTB.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_RMTB
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Gradient Enhanced Neural Network Model">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_GENN_thumb.png
+     :alt: Use of Gradient Enhanced Neural Network Model
+
+     :ref:`sphx_glr_auto_example_example_GENN.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_GENN
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Kriging">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_KRG_thumb.png
+     :alt: Use of Kriging
+
+     :ref:`sphx_glr_auto_example_example_KRG.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_KRG
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of KPLS">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_KPLS_thumb.png
+     :alt: Use of KPLS
+
+     :ref:`sphx_glr_auto_example_example_KPLS.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_KPLS
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of KPLS">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_KPLSK_thumb.png
+     :alt: Use of KPLS
+
+     :ref:`sphx_glr_auto_example_example_KPLSK.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_KPLSK
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Mixed Variable Kriging">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_MixedVariableKriging_thumb.png
+     :alt: Use of Mixed Variable Kriging
+
+     :ref:`sphx_glr_auto_example_example_MixedVariableKriging.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_MixedVariableKriging
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Multi-Fidelity Kriging">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_MFK_thumb.png
+     :alt: Use of Multi-Fidelity Kriging
+
+     :ref:`sphx_glr_auto_example_example_MFK.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_MFK
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Multi-Fidelity Kriging Partial Least Squares">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_MFKPLS_thumb.png
+     :alt: Use of Multi-Fidelity Kriging Partial Least Squares
+
+     :ref:`sphx_glr_auto_example_example_MFKPLS.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_MFKPLS
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of Multi-Fidelity Kriging Partial Least Squares K">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_MFKPLSK_thumb.png
+     :alt: Use of Multi-Fidelity Kriging Partial Least Squares K
+
+     :ref:`sphx_glr_auto_example_example_MFKPLSK.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_MFKPLSK
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of GEKPLS">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_example_GEKPLS_thumb.png
+     :alt: Use of GEKPLS
+
+     :ref:`sphx_glr_auto_example_example_GEKPLS.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/example_GEKPLS
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

@@ -19,26 +19,27 @@
 
 
 Use of Least Squares Surrogate Model
-----------------------------------------------
+------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-15
+.. GENERATED FROM PYTHON SOURCE LINES 7-16
 
 .. code-block:: default
 
 
     from smt.sampling_methods import LHS
     from smt.problems import Sphere
-    import numpy as np
-    import otsmt
     from smt.surrogate_models import LS
 
+    import numpy as np
+    import otsmt
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-17
 
-| Definition of Input distribution
+.. GENERATED FROM PYTHON SOURCE LINES 17-18
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-32
+| Definition of Initial data
+
+.. GENERATED FROM PYTHON SOURCE LINES 18-32
 
 .. code-block:: default
 
@@ -55,29 +56,30 @@ Use of Least Squares Surrogate Model
         yt = np.concatenate((yt, yd), axis=1)
        
     xv= sampling(10)
-
-    print(xv)
+    
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-34
 
 | Training of smt model for Least Squares
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
+
 
     sm_ls = LS()
     sm_ls.set_training_values(xt, yt[:,0])
     sm_ls.train()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-40
+.. GENERATED FROM PYTHON SOURCE LINES 40-41
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+.. GENERATED FROM PYTHON SOURCE LINES 41-45
 
 .. code-block:: default
+
 
     otls = otsmt.smt2ot(sm_ls)
     otlsprediction = otls.getPredictionFunction()

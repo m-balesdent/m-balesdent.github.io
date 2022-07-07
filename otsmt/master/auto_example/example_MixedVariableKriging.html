@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+
+<html lang="python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Use of Mixed Variable Kriging &#8212; ot-SMT 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/openturns.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/Icon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Use of Multi-Fidelity Kriging Partial Least Squares K" href="example_MFKPLSK.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../user_manual/user_manual.html">Doc</a></li>
+    <li><a href="../examples/examples.html">Examples</a></li>
+  </ul>
+  <a href="../index.html">
+    <h1>
+      <img src="../_static/logo-openturns-wo-bg.png" alt="" width=100px height=100px />
+      otak
+    </h1>
+    <h2> Module otak </h2>
+  </a>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="example_MFKPLSK.html" title="Use of Multi-Fidelity Kriging Partial Least Squares K"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" accesskey="U">Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Mixed Variable Kriging</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="example_MFKPLSK.html"
+                          title="previous chapter">Use of Multi-Fidelity Kriging Partial Least Squares K</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/auto_example/example_MixedVariableKriging.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-example-example-mixedvariablekriging-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="use-of-mixed-variable-kriging">
+<span id="sphx-glr-auto-example-example-mixedvariablekriging-py"></span><h1>Use of Mixed Variable Kriging<a class="headerlink" href="#use-of-mixed-variable-kriging" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.applications.mixed_integer</span> <span class="kn">import</span> <span class="n">MixedIntegerContext</span><span class="p">,</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="n">ORD</span><span class="p">,</span> <span class="n">ENUM</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">KRG</span>
+
+<span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">from</span> <span class="nn">smt.sampling_methods</span> <span class="kn">import</span> <span class="n">LHS</span><span class="p">,</span> <span class="n">Random</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Definition of Initial data</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">ORD</span><span class="p">,</span> <span class="n">FLOAT</span><span class="p">,</span> <span class="p">(</span><span class="n">ENUM</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="n">xlimits</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;yellow&quot;</span><span class="p">]]</span>
+
+<span class="k">def</span> <span class="nf">ftest</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># context to create consistent DOEs and surrogate</span>
+<span class="n">mixint</span> <span class="o">=</span> <span class="n">MixedIntegerContext</span><span class="p">(</span><span class="n">xtypes</span><span class="p">,</span> <span class="n">xlimits</span><span class="p">)</span>
+
+<span class="c1"># DOE for training</span>
+<span class="n">lhs</span> <span class="o">=</span> <span class="n">mixint</span><span class="o">.</span><span class="n">build_sampling_method</span><span class="p">(</span><span class="n">LHS</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="s2">&quot;ese&quot;</span><span class="p">)</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="n">mixint</span><span class="o">.</span><span class="n">get_unfolded_dimension</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DOE point nb = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+<span class="n">xt</span> <span class="o">=</span> <span class="n">lhs</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="n">yt</span> <span class="o">=</span> <span class="n">ftest</span><span class="p">(</span><span class="n">xt</span><span class="p">)</span>
+
+<span class="c1"># DOE for validation</span>
+<span class="n">rand</span> <span class="o">=</span> <span class="n">mixint</span><span class="o">.</span><span class="n">build_sampling_method</span><span class="p">(</span><span class="n">Random</span><span class="p">)</span>
+<span class="n">xv</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">yv</span> <span class="o">=</span> <span class="n">ftest</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Training of smt model for Mixed variables</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sm_mixed</span> <span class="o">=</span> <span class="n">mixint</span><span class="o">.</span><span class="n">build_surrogate_model</span><span class="p">(</span><span class="n">KRG</span><span class="p">())</span>
+<span class="n">sm_mixed</span><span class="o">.</span><span class="n">set_training_values</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">)</span>
+<span class="n">sm_mixed</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Creation of OpenTurns PythonFunction for prediction</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otmixed</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_mixed</span><span class="p">)</span>
+<span class="n">otmixedprediction</span> <span class="o">=</span> <span class="n">otmixed</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
+<span class="n">otmixedvariances</span> <span class="o">=</span> <span class="n">otmixed</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by Mixed Integer:&#39;</span><span class="p">,</span><span class="n">otmixedprediction</span><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by Mixed Intege:&#39;</span><span class="p">,</span><span class="n">otmixedvariances</span><span class="p">(</span><span class="n">xv</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-example-mixedvariablekriging-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/8f6faf2d31966f2b7ab328b416db86c9/example_MixedVariableKriging.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">example_MixedVariableKriging.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/b99795dc71f73850ade4a1a28396febb/example_MixedVariableKriging.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">example_MixedVariableKriging.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="example_MFKPLSK.html" title="Use of Multi-Fidelity Kriging Partial Least Squares K"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../examples/examples.html" >Examples</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use of Mixed Variable Kriging</a></li> 
+      </ul>
+    </div>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+  </body>
+</html>

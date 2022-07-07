@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="../_static/Icon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use of Gradient Enhanced Neural Network Model" href="example_GENN.html" />
     <link rel="prev" title="Examples" href="../examples/examples.html" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -49,6 +50,9 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="example_GENN.html" title="Use of Gradient Enhanced Neural Network Model"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="../examples/examples.html" title="Examples"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">ot-SMT 0.1 documentation</a> &#187;</li>
@@ -62,6 +66,11 @@
     <h4>Previous topic</h4>
     <p class="topless"><a href="../examples/examples.html"
                           title="previous chapter">Examples</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="example_GENN.html"
+                          title="next chapter">Use of Gradient Enhanced Neural Network Model</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -97,13 +106,14 @@ to download the full example code</p>
 <span id="sphx-glr-auto-example-example-ls-py"></span><h1>Use of Least Squares Surrogate Model<a class="headerlink" href="#use-of-least-squares-surrogate-model" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.sampling_methods</span> <span class="kn">import</span> <span class="n">LHS</span>
 <span class="kn">from</span> <span class="nn">smt.problems</span> <span class="kn">import</span> <span class="n">Sphere</span>
+<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">LS</span>
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">otsmt</span>
-<span class="kn">from</span> <span class="nn">smt.surrogate_models</span> <span class="kn">import</span> <span class="n">LS</span>
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line">Definition of Input distribution</div>
+<div class="line">Definition of Initial data</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construction of the DOE</span>
 <span class="n">fun</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ndim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -116,8 +126,6 @@ to download the full example code</p>
     <span class="n">yt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">yt</span><span class="p">,</span> <span class="n">yd</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">xv</span><span class="o">=</span> <span class="n">sampling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">xv</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -162,6 +170,9 @@ to download the full example code</p>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="example_GENN.html" title="Use of Gradient Enhanced Neural Network Model"
+             >next</a> |</li>
         <li class="right" >
           <a href="../examples/examples.html" title="Examples"
              >previous</a> |</li>

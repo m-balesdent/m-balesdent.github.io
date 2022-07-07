@@ -107,7 +107,7 @@ Use of Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.1263993
+       Training - done. Time (sec):  0.1222179
 
 
 
@@ -147,16 +147,16 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003085
+       Predicting - done. Time (sec):  0.0003242
    
-       Prediction time/pt. (sec) :  0.0001543
+       Prediction time/pt. (sec) :  0.0001621
    
     Predicted values by KRG:     [ y0      ]
-    0 : [ 1.01018 ]
-    1 : [ 5.00011 ]
+    0 : [ 1.01017 ]
+    1 : [ 5.00015 ]
     Predicted variances values by KRG:     [ y0          ]
-    0 : [ 5.55321e-08 ]
-    1 : [ 6.63334e-08 ]
+    0 : [ 5.59689e-08 ]
+    1 : [ 7.12463e-08 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -164,13 +164,13 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002542
+       Predicting - done. Time (sec):  0.0002639
    
-       Prediction time/pt. (sec) :  0.0001271
+       Prediction time/pt. (sec) :  0.0001320
    
     Predicted mean first derivatives by KRG:     [ y0       ]
-    0 : [ 0.199986 ]
-    1 : [ 1.99995  ]
+    0 : [ 0.200035 ]
+    1 : [ 2        ]
     ___________________________________________________________________________
    
      Evaluation
@@ -178,12 +178,12 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002561
+       Predicting - done. Time (sec):  0.0004666
    
-       Prediction time/pt. (sec) :  0.0001280
+       Prediction time/pt. (sec) :  0.0002333
    
     Predicted mean second derivatives by KRG:     [ y0      ]
-    0 : [ 1.99997 ]
+    0 : [ 1.99999 ]
     1 : [ 3.99994 ]
 
 
@@ -192,7 +192,7 @@ Use of Kriging
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.134 seconds)
+   **Total running time of the script:** ( 0 minutes  0.130 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KRG.py:

@@ -107,6 +107,7 @@ to download the full example code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">smt.applications</span> <span class="kn">import</span> <span class="n">MFKPLS</span><span class="p">,</span><span class="n">NestedLHS</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">otsmt</span>
+<span class="kn">import</span> <span class="nn">openturns</span> <span class="k">as</span> <span class="nn">ot</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -136,7 +137,7 @@ to download the full example code</p>
 <span class="n">yt_e</span> <span class="o">=</span> <span class="n">hf_function</span><span class="p">(</span><span class="n">xt_e</span><span class="p">)</span>
 <span class="n">yt_c</span> <span class="o">=</span> <span class="n">lf_function</span><span class="p">(</span><span class="n">xt_c</span><span class="p">)</span>
 
-<span class="n">xv_c</span><span class="p">,</span> <span class="n">xv_e</span> <span class="o">=</span> <span class="n">xdoes</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv_e</span></a> <span class="o">=</span> <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class"><span class="n">ot</span><span class="o">.</span><span class="n">Sample</span></a><span class="p">([[</span><span class="mf">0.1</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">]])</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -178,7 +179,7 @@ ___________________________________________________________________________
  Training
 
    Training ...
-   Training - done. Time (sec):  0.1003804
+   Training - done. Time (sec):  0.0981715
 </pre></div>
 </div>
 <div class="line-block">
@@ -189,9 +190,9 @@ ___________________________________________________________________________
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplspvariances</span></a> <span class="o">=</span> <span class="n">otmfkpls</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplsfirstderivatives</span></a> <span class="o">=</span> <span class="n">otmfkpls</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplsprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplspvariances</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplsfirstderivatives</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplsprediction</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv_e</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplspvariances</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv_e</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFKPLS:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkplsfirstderivatives</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv_e</span></a><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -199,60 +200,36 @@ ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0005572
+   Predicting - done. Time (sec):  0.0006847
 
-   Prediction time/pt. (sec) :  0.0000557
+   Prediction time/pt. (sec) :  0.0003424
 
-Predicted values by MFKPLS:     [ y0          ]
-0 : [  0.00407277 ]
-1 : [ 10.9228     ]
-2 : [  0.413308   ]
-3 : [  0.689917   ]
-4 : [  5.20032    ]
-5 : [ -0.878463   ]
-6 : [  0.554562   ]
-7 : [ -0.147649   ]
-8 : [ -5.4338     ]
-9 : [ -1.91136    ]
+Predicted values by MFKPLS:     [ y0        ]
+0 : [ -0.656621 ]
+1 : [  0.909277 ]
 Predicted variances values by MFKPLS:     [ y0          ]
-0 : [ 1.4766e-09  ]
-1 : [ 6.67636e-07 ]
-2 : [ 3.61461e-09 ]
-3 : [ 1.75327e-09 ]
-4 : [ 2.22896e-07 ]
-5 : [ 2.83249e-09 ]
-6 : [ 3.67193e-06 ]
-7 : [ 1.44437e-09 ]
-8 : [ 7.09772e-09 ]
-9 : [ 1.52091e-09 ]
+0 : [ 2.7099e-08  ]
+1 : [ 2.05868e-09 ]
 ___________________________________________________________________________
 
  Evaluation
 
-      # eval points. : 10
+      # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0005305
+   Predicting - done. Time (sec):  0.0005469
 
-   Prediction time/pt. (sec) :  0.0000530
+   Prediction time/pt. (sec) :  0.0002735
 
-Predicted mean first derivatives by MFKPLS:     [ y0         ]
-0 : [   0.569446 ]
-1 : [ 124.681    ]
-2 : [   8.91344  ]
-3 : [ -15.6019   ]
-4 : [ 140.384    ]
-5 : [   6.75721  ]
-6 : [ -36.8525   ]
-7 : [   5.518    ]
-8 : [  37.8547   ]
-9 : [ -47.0549   ]
+Predicted mean first derivatives by MFKPLS:     [ y0        ]
+0 : [ -16.5312  ]
+1 : [   5.91771 ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.276 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.188 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-mfkpls-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/1098c7e4646261b2736381625128c19b/plot_example_MFKPLS.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_MFKPLS.py</span></code></a></p>

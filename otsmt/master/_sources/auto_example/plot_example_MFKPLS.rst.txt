@@ -29,7 +29,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
     from smt.applications import MFKPLS,NestedLHS
     import numpy as np
     import otsmt
-
+    import openturns as ot
 
 
 
@@ -72,7 +72,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
     yt_e = hf_function(xt_e)
     yt_c = lf_function(xt_c)
 
-    xv_c, xv_e = xdoes(10)
+    xv_e = ot.Sample([[0.1],[0.5]])    
     
 
 
@@ -138,7 +138,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
      Training
    
        Training ...
-       Training - done. Time (sec):  0.1003804
+       Training - done. Time (sec):  0.0981715
 
 
 
@@ -173,57 +173,33 @@ Use of Multi-Fidelity Kriging Partial Least Squares
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005572
+       Predicting - done. Time (sec):  0.0006847
    
-       Prediction time/pt. (sec) :  0.0000557
+       Prediction time/pt. (sec) :  0.0003424
    
-    Predicted values by MFKPLS:     [ y0          ]
-    0 : [  0.00407277 ]
-    1 : [ 10.9228     ]
-    2 : [  0.413308   ]
-    3 : [  0.689917   ]
-    4 : [  5.20032    ]
-    5 : [ -0.878463   ]
-    6 : [  0.554562   ]
-    7 : [ -0.147649   ]
-    8 : [ -5.4338     ]
-    9 : [ -1.91136    ]
+    Predicted values by MFKPLS:     [ y0        ]
+    0 : [ -0.656621 ]
+    1 : [  0.909277 ]
     Predicted variances values by MFKPLS:     [ y0          ]
-    0 : [ 1.4766e-09  ]
-    1 : [ 6.67636e-07 ]
-    2 : [ 3.61461e-09 ]
-    3 : [ 1.75327e-09 ]
-    4 : [ 2.22896e-07 ]
-    5 : [ 2.83249e-09 ]
-    6 : [ 3.67193e-06 ]
-    7 : [ 1.44437e-09 ]
-    8 : [ 7.09772e-09 ]
-    9 : [ 1.52091e-09 ]
+    0 : [ 2.7099e-08  ]
+    1 : [ 2.05868e-09 ]
     ___________________________________________________________________________
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005305
+       Predicting - done. Time (sec):  0.0005469
    
-       Prediction time/pt. (sec) :  0.0000530
+       Prediction time/pt. (sec) :  0.0002735
    
-    Predicted mean first derivatives by MFKPLS:     [ y0         ]
-    0 : [   0.569446 ]
-    1 : [ 124.681    ]
-    2 : [   8.91344  ]
-    3 : [ -15.6019   ]
-    4 : [ 140.384    ]
-    5 : [   6.75721  ]
-    6 : [ -36.8525   ]
-    7 : [   5.518    ]
-    8 : [  37.8547   ]
-    9 : [ -47.0549   ]
+    Predicted mean first derivatives by MFKPLS:     [ y0        ]
+    0 : [ -16.5312  ]
+    1 : [   5.91771 ]
 
 
 
@@ -231,7 +207,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.276 seconds)
+   **Total running time of the script:** ( 0 minutes  0.188 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFKPLS.py:

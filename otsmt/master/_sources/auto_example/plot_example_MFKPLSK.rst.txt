@@ -21,7 +21,7 @@
 Use of Multi-Fidelity Kriging Partial Least Squares K
 -----------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-13
+.. GENERATED FROM PYTHON SOURCE LINES 7-12
 
 .. code-block:: default
 
@@ -29,6 +29,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
     from smt.applications import MFKPLSK,NestedLHS
     import numpy as np
     import otsmt
+    import openturns as ot
 
 
 
@@ -36,13 +37,11 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
 
 
 
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 14-15
+.. GENERATED FROM PYTHON SOURCE LINES 13-14
 
 | Definition of Initial data
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-43
+.. GENERATED FROM PYTHON SOURCE LINES 14-42
 
 .. code-block:: default
 
@@ -72,7 +71,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
     yt_e = hf_function(xt_e)
     yt_c = lf_function(xt_c)
 
-    xv_c, xv_e = xdoes(10)
+    xv_e = ot.Sample([[0.1],[0.5]])    
     
 
 
@@ -94,11 +93,11 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-45
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 | Training of smt model for MFKPLSK
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-58
+.. GENERATED FROM PYTHON SOURCE LINES 44-57
 
 .. code-block:: default
 
@@ -139,16 +138,16 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
      Training
    
        Training ...
-       Training - done. Time (sec):  0.2102304
+       Training - done. Time (sec):  0.2047493
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-60
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-68
+.. GENERATED FROM PYTHON SOURCE LINES 59-67
 
 .. code-block:: default
 
@@ -174,57 +173,33 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005543
+       Predicting - done. Time (sec):  0.0005186
    
-       Prediction time/pt. (sec) :  0.0000554
+       Prediction time/pt. (sec) :  0.0002593
    
-    Predicted values by MFKPLSK:     [ y0          ]
-    0 : [  0.00407516 ]
-    1 : [ 10.9228     ]
-    2 : [  0.413306   ]
-    3 : [  0.689915   ]
-    4 : [  5.20031    ]
-    5 : [ -0.878464   ]
-    6 : [  0.554412   ]
-    7 : [ -0.147647   ]
-    8 : [ -5.4338     ]
-    9 : [ -1.91136    ]
+    Predicted values by MFKPLSK:     [ y0        ]
+    0 : [ -0.65661  ]
+    1 : [  0.909276 ]
     Predicted variances values by MFKPLSK:     [ y0          ]
-    0 : [ 1.45209e-09 ]
-    1 : [ 6.35285e-07 ]
-    2 : [ 3.42704e-09 ]
-    3 : [ 1.74249e-09 ]
-    4 : [ 2.11433e-07 ]
-    5 : [ 2.75294e-09 ]
-    6 : [ 3.50246e-06 ]
-    7 : [ 1.41195e-09 ]
-    8 : [ 6.68663e-09 ]
-    9 : [ 1.40839e-09 ]
+    0 : [ 2.57565e-08 ]
+    1 : [ 1.9342e-09  ]
     ___________________________________________________________________________
    
      Evaluation
    
-          # eval points. : 10
+          # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0005114
+       Predicting - done. Time (sec):  0.0004942
    
-       Prediction time/pt. (sec) :  0.0000511
+       Prediction time/pt. (sec) :  0.0002471
    
-    Predicted mean first derivatives by MFKPLSK:     [ y0         ]
-    0 : [   0.569416 ]
-    1 : [ 124.682    ]
-    2 : [   8.91344  ]
-    3 : [ -15.6019   ]
-    4 : [ 140.384    ]
-    5 : [   6.7574   ]
-    6 : [ -36.8401   ]
-    7 : [   5.51796  ]
-    8 : [  37.8547   ]
-    9 : [ -47.0549   ]
+    Predicted mean first derivatives by MFKPLSK:     [ y0        ]
+    0 : [ -16.5315  ]
+    1 : [   5.91773 ]
 
 
 
@@ -232,7 +207,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.380 seconds)
+   **Total running time of the script:** ( 0 minutes  0.298 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFKPLSK.py:

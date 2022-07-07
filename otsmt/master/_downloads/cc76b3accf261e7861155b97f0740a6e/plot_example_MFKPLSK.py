@@ -8,8 +8,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares K
 from smt.applications import MFKPLSK,NestedLHS
 import numpy as np
 import otsmt
-
-
+import openturns as ot
 # %%
 # | Definition of Initial data
 
@@ -38,7 +37,7 @@ xt_c, xt_e = xdoes(7)
 yt_e = hf_function(xt_e)
 yt_c = lf_function(xt_c)
 
-xv_c, xv_e = xdoes(10)
+xv_e = ot.Sample([[0.1],[0.5]])    
     
 # %%
 # | Training of smt model for MFKPLSK

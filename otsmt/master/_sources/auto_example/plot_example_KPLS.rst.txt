@@ -105,7 +105,7 @@ Use of KPLS
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0601366
+       Training - done. Time (sec):  0.0584693
 
 
 
@@ -145,16 +145,16 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002961
+       Predicting - done. Time (sec):  0.0003090
    
-       Prediction time/pt. (sec) :  0.0001481
+       Prediction time/pt. (sec) :  0.0001545
    
     Predicted values by KPLS:     [ y0      ]
-    0 : [ 1.01039 ]
-    1 : [ 5.00031 ]
+    0 : [ 1.01035 ]
+    1 : [ 5.00022 ]
     Predicted variances values by KPLS:     [ y0          ]
-    0 : [ 6.90166e-08 ]
-    1 : [ 5.9153e-08  ]
+    0 : [ 5.55866e-08 ]
+    1 : [ 5.62178e-08 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -162,13 +162,13 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002584
+       Predicting - done. Time (sec):  0.0002739
    
-       Prediction time/pt. (sec) :  0.0001292
+       Prediction time/pt. (sec) :  0.0001370
    
     Predicted mean first derivatives by KPLS:     [ y0       ]
-    0 : [ 0.200041 ]
-    1 : [ 1.99999  ]
+    0 : [ 0.199987 ]
+    1 : [ 1.99995  ]
     ___________________________________________________________________________
    
      Evaluation
@@ -176,9 +176,9 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002582
+       Predicting - done. Time (sec):  0.0002730
    
-       Prediction time/pt. (sec) :  0.0001291
+       Prediction time/pt. (sec) :  0.0001365
    
     Predicted mean second derivatives by KPLS:     [ y0      ]
     0 : [ 1.99993 ]
@@ -190,7 +190,7 @@ Use of KPLS
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.068 seconds)
+   **Total running time of the script:** ( 0 minutes  0.066 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KPLS.py:

@@ -108,7 +108,7 @@ Use of KPLSK
      Training
    
        Training ...
-       Training - done. Time (sec):  0.1196191
+       Training - done. Time (sec):  0.0953236
 
 
 
@@ -117,7 +117,7 @@ Use of KPLSK
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-50
+.. GENERATED FROM PYTHON SOURCE LINES 42-51
 
 .. code-block:: default
 
@@ -129,7 +129,8 @@ Use of KPLSK
 
     print('Predicted values by KPLSK:',otkplskprediction(xv))    
     print('Predicted variances values by KPLSK:',otkplskvariances(xv))    
-    print('Predicted mean first derivatives by KPLSK:',otkplskgradient(xv))
+    print('Prediction derivatives derivatives by KPLSK:',otkplskgradient(xv))
+
 
 
 
@@ -146,16 +147,16 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002463
+       Predicting - done. Time (sec):  0.0002224
    
-       Prediction time/pt. (sec) :  0.0001231
+       Prediction time/pt. (sec) :  0.0001112
    
     Predicted values by KPLSK:     [ y0      ]
-    0 : [ 1.01014 ]
-    1 : [ 5       ]
+    0 : [ 1.01022 ]
+    1 : [ 5.00008 ]
     Predicted variances values by KPLSK:     [ y0          ]
-    0 : [ 5.88176e-08 ]
-    1 : [ 9.21894e-08 ]
+    0 : [ 5.85532e-08 ]
+    1 : [ 5.94511e-08 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -163,9 +164,9 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002260
+       Predicting - done. Time (sec):  0.0001738
    
-       Prediction time/pt. (sec) :  0.0001130
+       Prediction time/pt. (sec) :  0.0000869
    
     ___________________________________________________________________________
    
@@ -174,13 +175,13 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001776
+       Predicting - done. Time (sec):  0.0001333
    
-       Prediction time/pt. (sec) :  0.0000888
+       Prediction time/pt. (sec) :  0.0000666
    
-    Predicted mean first derivatives by KPLSK:     [ y0       y1       ]
-    0 : [ 0.199991 1.9999   ]
-    1 : [ 1.99997  3.99987  ]
+    Prediction derivatives derivatives by KPLSK:     [ y0      y1      ]
+    0 : [ 0.19995 1.99993 ]
+    1 : [ 1.99992 3.9999  ]
 
 
 
@@ -188,7 +189,7 @@ Use of KPLSK
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.126 seconds)
+   **Total running time of the script:** ( 0 minutes  0.101 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KPLSK.py:

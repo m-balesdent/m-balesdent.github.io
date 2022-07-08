@@ -54,4 +54,4 @@ otmixedprediction = otmixed.getPredictionFunction()
 otmixedvariances = otmixed.getConditionalVarianceFunction()
 
 print('Predicted values by Mixed Integer:',otmixedprediction(xv))    
-print('Predicted variances values by Mixed Intege:',otmixedvariances(xv))  
+print('Predicted variances values by Mixed Integer:',otmixedvariances(xv))  

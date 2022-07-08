@@ -138,7 +138,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0659590
+       Training - done. Time (sec):  0.0541923
 
 
 
@@ -147,7 +147,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-67
+.. GENERATED FROM PYTHON SOURCE LINES 59-68
 
 .. code-block:: default
 
@@ -159,7 +159,8 @@ Use of Multi-Fidelity Kriging Partial Least Squares
 
     print('Predicted values by MFKPLS:',otmfkplsprediction(xv_e))    
     print('Predicted variances values by MFKPLS:',otmfkplspvariances(xv_e))    
-    print('Predicted mean derivatives by MFKPLS:',otmfkplsgradient(xv_e)) 
+    print('Prediction derivatives by MFKPLS:',otmfkplsgradient(xv_e)) 
+
 
 
 
@@ -176,9 +177,9 @@ Use of Multi-Fidelity Kriging Partial Least Squares
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003600
+       Predicting - done. Time (sec):  0.0003593
    
-       Prediction time/pt. (sec) :  0.0001800
+       Prediction time/pt. (sec) :  0.0001796
    
     Predicted values by MFKPLS:     [ y0        ]
     0 : [ -0.656621 ]
@@ -193,11 +194,11 @@ Use of Multi-Fidelity Kriging Partial Least Squares
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0004241
+       Predicting - done. Time (sec):  0.0003285
    
-       Prediction time/pt. (sec) :  0.0002121
+       Prediction time/pt. (sec) :  0.0001643
    
-    Predicted mean derivatives by MFKPLS:     [ y0        ]
+    Prediction derivatives by MFKPLS:     [ y0        ]
     0 : [ -16.5312  ]
     1 : [   5.91771 ]
 
@@ -207,7 +208,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.134 seconds)
+   **Total running time of the script:** ( 0 minutes  0.115 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFKPLS.py:

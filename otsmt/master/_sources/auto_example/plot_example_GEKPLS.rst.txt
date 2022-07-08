@@ -140,9 +140,7 @@ Use of GEKPLS
       warnings.warn(f"Y residual is constant at iteration {k}")
     /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
       warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-       Training - done. Time (sec):  0.1643131
+       Training - done. Time (sec):  0.1289790
 
 
 
@@ -175,14 +173,14 @@ Use of GEKPLS
  .. code-block:: none
 
     Predicted values by GEKPLS:     [ y0      ]
-    0 : [ 1.01002 ]
-    1 : [ 5.00006 ]
-    Predicted variances values by GEKPLS:     [ y0          ]
-    0 : [ 7.36064e-09 ]
-    1 : [ 8.85982e-09 ]
+    0 : [ 1.00997 ]
+    1 : [ 5.00001 ]
+    Predicted variances values by GEKPLS:     [ y0         ]
+    0 : [ 1.4479e-09 ]
+    1 : [ 1.7761e-09 ]
     Prediction derivatives by GEKPLS:     [ y0       y1       ]
-    0 : [ 0.200014 2.00003  ]
-    1 : [ 2.00001  4.00003  ]
+    0 : [ 0.200015 2.00001  ]
+    1 : [ 2.00003  4.00002  ]
 
 
 
@@ -190,7 +188,7 @@ Use of GEKPLS
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.170 seconds)
+   **Total running time of the script:** ( 0 minutes  0.134 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_GEKPLS.py:

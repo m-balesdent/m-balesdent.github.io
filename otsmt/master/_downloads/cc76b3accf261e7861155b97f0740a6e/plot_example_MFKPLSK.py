@@ -64,4 +64,4 @@ otmfkplskgradient = otmfkplsk.getPredictionDerivativesFunction()
 
 print('Predicted values by MFKPLSK:',otmfkplskprediction(xv_e))    
 print('Predicted variances values by MFKPLSK:',otmfkplskpvariances(xv_e))    
-print('Predicted mean derivatives by MFKPLSK:',otmfkplskgradient(xv_e)) 
+print('Prediction derivatives by MFKPLSK:',otmfkplskgradient(xv_e)) 

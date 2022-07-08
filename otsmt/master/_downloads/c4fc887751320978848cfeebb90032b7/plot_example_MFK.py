@@ -63,7 +63,7 @@ otmfkgradient = otmfk.getPredictionDerivativesFunction()
 
 print('Predicted values by MFK:',otmfkprediction(xv_e))    
 print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
-print('Predicted mean derivatives by MFK:',otmfkgradient(xv_e))  
+print('Prediction derivatives by MFK:',otmfkgradient(xv_e))  
 
 plt.figure()
 

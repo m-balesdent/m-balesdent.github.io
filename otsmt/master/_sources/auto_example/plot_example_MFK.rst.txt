@@ -137,7 +137,7 @@ Use of Multi-Fidelity Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0640597
+       Training - done. Time (sec):  0.0519252
 
 
 
@@ -158,7 +158,7 @@ Use of Multi-Fidelity Kriging
 
     print('Predicted values by MFK:',otmfkprediction(xv_e))    
     print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
-    print('Predicted mean derivatives by MFK:',otmfkgradient(xv_e))  
+    print('Prediction derivatives by MFK:',otmfkgradient(xv_e))  
 
     plt.figure()
 
@@ -195,9 +195,9 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0004249
+       Predicting - done. Time (sec):  0.0003684
    
-       Prediction time/pt. (sec) :  0.0000085
+       Prediction time/pt. (sec) :  0.0000074
    
     Predicted values by MFK:      [ y0           ]
      0 : [  3.36259     ]
@@ -308,11 +308,11 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003972
+       Predicting - done. Time (sec):  0.0003324
    
-       Prediction time/pt. (sec) :  0.0000079
+       Prediction time/pt. (sec) :  0.0000066
    
-    Predicted mean derivatives by MFK:      [ y0          ]
+    Prediction derivatives by MFK:      [ y0          ]
      0 : [ -62.1445    ]
      1 : [ -54.2438    ]
      2 : [ -45.0897    ]
@@ -370,19 +370,19 @@ Use of Multi-Fidelity Kriging
           # eval points. : 50
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003967
+       Predicting - done. Time (sec):  0.0003662
    
-       Prediction time/pt. (sec) :  0.0000079
+       Prediction time/pt. (sec) :  0.0000073
    
 
-    <matplotlib.legend.Legend object at 0x7fb3f554dfd0>
+    <matplotlib.legend.Legend object at 0x7f1210b7ff40>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.226 seconds)
+   **Total running time of the script:** ( 0 minutes  0.193 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFK.py:

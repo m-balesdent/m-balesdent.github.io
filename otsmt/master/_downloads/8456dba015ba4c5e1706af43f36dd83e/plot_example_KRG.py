@@ -46,4 +46,4 @@ otkrggradient = otkrg.getPredictionDerivativesFunction()
 
 print('Predicted values by KRG:',otkrgprediction(xv))    
 print('Predicted variances values by KRG:',otkrgvariances(xv))    
-print('Predicted mean derivatives by KRG:',otkrggradient(xv))    
+print('Prediction derivatives by KRG:',otkrggradient(xv))    

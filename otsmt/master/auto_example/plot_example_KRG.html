@@ -151,7 +151,7 @@ ___________________________________________________________________________
  Training
 
    Training ...
-   Training - done. Time (sec):  0.0855677
+   Training - done. Time (sec):  0.0650356
 </pre></div>
 </div>
 <div class="line-block">
@@ -164,7 +164,7 @@ ___________________________________________________________________________
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgprediction</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrgvariances</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean derivatives by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrggradient</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prediction derivatives by KRG:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otkrggradient</span></a><span class="p">(</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Sample.html#openturns.Sample" title="openturns.Sample" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">xv</span></a><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -175,16 +175,16 @@ ___________________________________________________________________________
       # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0002770
+   Predicting - done. Time (sec):  0.0002241
 
-   Prediction time/pt. (sec) :  0.0001385
+   Prediction time/pt. (sec) :  0.0001121
 
 Predicted values by KRG:     [ y0      ]
-0 : [ 1.0102  ]
-1 : [ 5.00011 ]
+0 : [ 1.01007 ]
+1 : [ 4.99998 ]
 Predicted variances values by KRG:     [ y0          ]
-0 : [ 4.74031e-08 ]
-1 : [ 5.71508e-08 ]
+0 : [ 5.52789e-08 ]
+1 : [ 9.28631e-08 ]
 ___________________________________________________________________________
 
  Evaluation
@@ -192,9 +192,9 @@ ___________________________________________________________________________
       # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0002210
+   Predicting - done. Time (sec):  0.0001702
 
-   Prediction time/pt. (sec) :  0.0001105
+   Prediction time/pt. (sec) :  0.0000851
 
 ___________________________________________________________________________
 
@@ -203,16 +203,16 @@ ___________________________________________________________________________
       # eval points. : 2
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0001760
+   Predicting - done. Time (sec):  0.0001378
 
-   Prediction time/pt. (sec) :  0.0000880
+   Prediction time/pt. (sec) :  0.0000689
 
-Predicted mean derivatives by KRG:     [ y0       y1       ]
-0 : [ 0.199988 1.99996  ]
-1 : [ 1.99996  3.99993  ]
+Prediction derivatives by KRG:     [ y0       y1       ]
+0 : [ 0.199996 1.99994  ]
+1 : [ 1.99997  3.99991  ]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.092 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.071 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-krg-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/8456dba015ba4c5e1706af43f36dd83e/plot_example_KRG.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_KRG.py</span></code></a></p>

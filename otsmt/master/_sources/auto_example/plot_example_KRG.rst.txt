@@ -107,7 +107,7 @@ Use of Kriging
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0712442
+       Training - done. Time (sec):  0.0643482
 
 
 
@@ -116,7 +116,7 @@ Use of Kriging
 
 | Creation of OpenTurns PythonFunction for prediction
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-51
+.. GENERATED FROM PYTHON SOURCE LINES 41-50
 
 .. code-block:: default
 
@@ -124,13 +124,12 @@ Use of Kriging
     otkrg =  otsmt.smt2ot(sm_krg)
     otkrgprediction = otkrg.getPredictionFunction()
     otkrgvariances = otkrg.getConditionalVarianceFunction()
-    otkrgfirstderivatives = otkrg.getPredictionDerivativesFunction(0)
-    otkrgsecondderivatives = otkrg.getPredictionDerivativesFunction(1)
+    otkrggradient = otkrg.getPredictionDerivativesFunction()
 
     print('Predicted values by KRG:',otkrgprediction(xv))    
     print('Predicted variances values by KRG:',otkrgvariances(xv))    
-    print('Predicted mean first derivatives by KRG:',otkrgfirstderivatives(xv))    
-    print('Predicted mean second derivatives by KRG:',otkrgsecondderivatives(xv))    
+    print('Predicted mean derivatives by KRG:',otkrggradient(xv))    
+
 
 
 
@@ -147,16 +146,16 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002446
+       Predicting - done. Time (sec):  0.0002034
    
-       Prediction time/pt. (sec) :  0.0001223
+       Prediction time/pt. (sec) :  0.0001017
    
     Predicted values by KRG:     [ y0      ]
-    0 : [ 1.01013 ]
-    1 : [ 5.00004 ]
+    0 : [ 1.01024 ]
+    1 : [ 5.00024 ]
     Predicted variances values by KRG:     [ y0          ]
-    0 : [ 3.91383e-08 ]
-    1 : [ 4.04405e-08 ]
+    0 : [ 7.8611e-08  ]
+    1 : [ 6.75513e-08 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -164,13 +163,10 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0002100
+       Predicting - done. Time (sec):  0.0001669
    
-       Prediction time/pt. (sec) :  0.0001050
+       Prediction time/pt. (sec) :  0.0000834
    
-    Predicted mean first derivatives by KRG:     [ y0       ]
-    0 : [ 0.199963 ]
-    1 : [ 1.99993  ]
     ___________________________________________________________________________
    
      Evaluation
@@ -178,13 +174,13 @@ Use of Kriging
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001781
+       Predicting - done. Time (sec):  0.0001395
    
-       Prediction time/pt. (sec) :  0.0000890
+       Prediction time/pt. (sec) :  0.0000697
    
-    Predicted mean second derivatives by KRG:     [ y0      ]
-    0 : [ 1.99996 ]
-    1 : [ 3.99994 ]
+    Predicted mean derivatives by KRG:     [ y0       y1       ]
+    0 : [ 0.199979 2.00005  ]
+    1 : [ 1.99995  4.00001  ]
 
 
 
@@ -192,7 +188,7 @@ Use of Kriging
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.077 seconds)
+   **Total running time of the script:** ( 0 minutes  0.070 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KRG.py:

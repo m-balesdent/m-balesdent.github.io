@@ -180,7 +180,7 @@ ___________________________________________________________________________
  Training
 
    Training ...
-   Training - done. Time (sec):  0.0565300
+   Training - done. Time (sec):  0.0513179
 </pre></div>
 </div>
 <div class="line-block">
@@ -189,11 +189,11 @@ ___________________________________________________________________________
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">otmfk</span> <span class="o">=</span> <span class="n">otsmt</span><span class="o">.</span><span class="n">smt2ot</span><span class="p">(</span><span class="n">sm_mfk</span><span class="p">)</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getPredictionFunction</span><span class="p">()</span>
 <a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkpvariances</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getConditionalVarianceFunction</span><span class="p">()</span>
-<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkfirstderivatives</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkgradient</span></a> <span class="o">=</span> <span class="n">otmfk</span><span class="o">.</span><span class="n">getPredictionDerivativesFunction</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkprediction</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted variances values by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkpvariances</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean first derivatives by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkfirstderivatives</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predicted mean derivatives by MFK:&#39;</span><span class="p">,</span><a href="http://openturns.github.io/openturns/latest/user_manual/_generated/openturns.Function.html#openturns.Function" title="openturns.Function" class="sphx-glr-backref-module-openturns sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">otmfkgradient</span></a><span class="p">(</span><span class="n">xv_e</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
@@ -213,9 +213,9 @@ ___________________________________________________________________________
       # eval points. : 50
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003753
+   Predicting - done. Time (sec):  0.0003419
 
-   Prediction time/pt. (sec) :  0.0000075
+   Prediction time/pt. (sec) :  0.0000068
 
 Predicted values by MFK:      [ y0           ]
  0 : [  3.36259     ]
@@ -326,11 +326,11 @@ ___________________________________________________________________________
       # eval points. : 50
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003569
+   Predicting - done. Time (sec):  0.0003211
 
-   Prediction time/pt. (sec) :  0.0000071
+   Prediction time/pt. (sec) :  0.0000064
 
-Predicted mean first derivatives by MFK:      [ y0          ]
+Predicted mean derivatives by MFK:      [ y0          ]
  0 : [ -62.1445    ]
  1 : [ -54.2438    ]
  2 : [ -45.0897    ]
@@ -388,15 +388,15 @@ ___________________________________________________________________________
       # eval points. : 50
 
    Predicting ...
-   Predicting - done. Time (sec):  0.0003278
+   Predicting - done. Time (sec):  0.0003219
 
-   Prediction time/pt. (sec) :  0.0000066
+   Prediction time/pt. (sec) :  0.0000064
 
 
-&lt;matplotlib.legend.Legend object at 0x7f4abad008e0&gt;
+&lt;matplotlib.legend.Legend object at 0x7fb4c96a13a0&gt;
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.199 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.189 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-example-mfk-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/c4fc887751320978848cfeebb90032b7/plot_example_MFK.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_example_MFK.py</span></code></a></p>

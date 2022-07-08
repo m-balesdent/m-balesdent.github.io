@@ -109,13 +109,13 @@ Use of Radial Basis Function
        Training ...
           Initializing linear solver ...
              Performing LU fact. (40 x 40 mtx) ...
-             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001292
-          Initializing linear solver - done. Time (sec):  0.0001972
+             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001040
+          Initializing linear solver - done. Time (sec):  0.0001707
           Solving linear system (col. 0) ...
              Back solving (40 x 40 mtx) ...
-             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000494
-          Solving linear system (col. 0) - done. Time (sec):  0.0001068
-       Training - done. Time (sec):  0.0007095
+             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000465
+          Solving linear system (col. 0) - done. Time (sec):  0.0001049
+       Training - done. Time (sec):  0.0006342
 
 
 
@@ -148,13 +148,13 @@ Use of Radial Basis Function
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000238
+       Predicting - done. Time (sec):  0.0000205
    
-       Prediction time/pt. (sec) :  0.0000119
+       Prediction time/pt. (sec) :  0.0000103
    
-    Predicted values by RBF:     [ y0       ]
-    0 : [ 0.815055 ]
-    1 : [ 0.612684 ]
+    Predicted values by RBF:     [ y0      ]
+    0 : [ 0.54318 ]
+    1 : [ 1.27588 ]
 
 
 

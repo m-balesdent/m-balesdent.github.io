@@ -138,7 +138,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0582807
+       Training - done. Time (sec):  0.0538645
 
 
 
@@ -155,11 +155,11 @@ Use of Multi-Fidelity Kriging Partial Least Squares
     otmfkpls = otsmt.smt2ot(sm_mfkpls)
     otmfkplsprediction = otmfkpls.getPredictionFunction()
     otmfkplspvariances = otmfkpls.getConditionalVarianceFunction()
-    otmfkplsfirstderivatives = otmfkpls.getPredictionDerivativesFunction(0)
+    otmfkplsgradient= otmfkpls.getPredictionDerivativesFunction()
 
     print('Predicted values by MFKPLS:',otmfkplsprediction(xv_e))    
     print('Predicted variances values by MFKPLS:',otmfkplspvariances(xv_e))    
-    print('Predicted mean first derivatives by MFKPLS:',otmfkplsfirstderivatives(xv_e)) 
+    print('Predicted mean derivatives by MFKPLS:',otmfkplsgradient(xv_e)) 
 
 
 
@@ -176,9 +176,9 @@ Use of Multi-Fidelity Kriging Partial Least Squares
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003700
+       Predicting - done. Time (sec):  0.0003195
    
-       Prediction time/pt. (sec) :  0.0001850
+       Prediction time/pt. (sec) :  0.0001597
    
     Predicted values by MFKPLS:     [ y0        ]
     0 : [ -0.656621 ]
@@ -193,11 +193,11 @@ Use of Multi-Fidelity Kriging Partial Least Squares
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0003676
+       Predicting - done. Time (sec):  0.0003271
    
-       Prediction time/pt. (sec) :  0.0001838
+       Prediction time/pt. (sec) :  0.0001636
    
-    Predicted mean first derivatives by MFKPLS:     [ y0        ]
+    Predicted mean derivatives by MFKPLS:     [ y0        ]
     0 : [ -16.5312  ]
     1 : [   5.91771 ]
 
@@ -207,7 +207,7 @@ Use of Multi-Fidelity Kriging Partial Least Squares
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.118 seconds)
+   **Total running time of the script:** ( 0 minutes  0.114 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_MFKPLS.py:

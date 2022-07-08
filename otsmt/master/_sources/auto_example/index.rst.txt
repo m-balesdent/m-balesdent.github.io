@@ -240,6 +240,27 @@
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Use of GEKPLS">
+
+.. only:: html
+
+ .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_GEKPLS_thumb.png
+     :alt: Use of GEKPLS
+
+     :ref:`sphx_glr_auto_example_plot_example_GEKPLS.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_example/plot_example_GEKPLS
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Use of Multi-Fidelity Kriging Partial Least Squares">
 
 .. only:: html
@@ -279,27 +300,6 @@
    :hidden:
 
    /auto_example/plot_example_MFKPLSK
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use of GEKPLS">
-
-.. only:: html
-
- .. figure:: /auto_example/images/thumb/sphx_glr_plot_example_GEKPLS_thumb.png
-     :alt: Use of GEKPLS
-
-     :ref:`sphx_glr_auto_example_plot_example_GEKPLS.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_example/plot_example_GEKPLS
 
 .. raw:: html
 

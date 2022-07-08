@@ -59,11 +59,11 @@ sm_mfk.train()
 otmfk = otsmt.smt2ot(sm_mfk)
 otmfkprediction = otmfk.getPredictionFunction()
 otmfkpvariances = otmfk.getConditionalVarianceFunction()
-otmfkfirstderivatives = otmfk.getPredictionDerivativesFunction(0)
+otmfkgradient = otmfk.getPredictionDerivativesFunction()
 
 print('Predicted values by MFK:',otmfkprediction(xv_e))    
 print('Predicted variances values by MFK:',otmfkpvariances(xv_e))    
-print('Predicted mean first derivatives by MFK:',otmfkfirstderivatives(xv_e))  
+print('Predicted mean derivatives by MFK:',otmfkgradient(xv_e))  
 
 plt.figure()
 

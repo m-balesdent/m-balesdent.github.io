@@ -108,7 +108,7 @@ Use of Least Squares Surrogate Model
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0013218
+       Training - done. Time (sec):  0.0015585
 
 
 
@@ -142,13 +142,13 @@ Use of Least Squares Surrogate Model
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001073
+       Predicting - done. Time (sec):  0.0001061
    
-       Prediction time/pt. (sec) :  0.0000536
+       Prediction time/pt. (sec) :  0.0000530
    
     Predicted values by LS:     [ y0      ]
-    0 : [ 67.0067 ]
-    1 : [ 67.0586 ]
+    0 : [ 66.1614 ]
+    1 : [ 63.6713 ]
 
 
 

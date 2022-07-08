@@ -43,9 +43,8 @@ genn.train()
 
 otgenn =  otsmt.smt2ot(genn)
 otgennprediction = otgenn.getPredictionFunction()
-otgennfirstderivatives = otgenn.getPredictionDerivativesFunction(0)
-otgennsecondderivatives = otgenn.getPredictionDerivativesFunction(1)
+otgenngradient = otgenn.getPredictionDerivativesFunction()
+
 
 print('Predicted values by GENN:',otgennprediction(xv))
-print('Predicted mean first derivatives by GENN:',otgennfirstderivatives(xv))    
-print('Predicted mean second derivatives by GENN:',otgennsecondderivatives(xv))
+print('Predicted mean derivatives by GENN:',otgenngradient(xv))    

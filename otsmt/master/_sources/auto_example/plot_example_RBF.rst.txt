@@ -109,13 +109,13 @@ Use of Radial Basis Function
        Training ...
           Initializing linear solver ...
              Performing LU fact. (40 x 40 mtx) ...
-             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001040
-          Initializing linear solver - done. Time (sec):  0.0001707
+             Performing LU fact. (40 x 40 mtx) - done. Time (sec):  0.0001526
+          Initializing linear solver - done. Time (sec):  0.0002577
           Solving linear system (col. 0) ...
              Back solving (40 x 40 mtx) ...
-             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000465
-          Solving linear system (col. 0) - done. Time (sec):  0.0001049
-       Training - done. Time (sec):  0.0006342
+             Back solving (40 x 40 mtx) - done. Time (sec):  0.0000603
+          Solving linear system (col. 0) - done. Time (sec):  0.0001230
+       Training - done. Time (sec):  0.0007906
 
 
 
@@ -148,13 +148,13 @@ Use of Radial Basis Function
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0000205
+       Predicting - done. Time (sec):  0.0000241
    
-       Prediction time/pt. (sec) :  0.0000103
+       Prediction time/pt. (sec) :  0.0000120
    
     Predicted values by RBF:     [ y0      ]
-    0 : [ 0.54318 ]
-    1 : [ 1.27588 ]
+    0 : [ 1.36507 ]
+    1 : [ 1.76136 ]
 
 
 
@@ -162,7 +162,7 @@ Use of Radial Basis Function
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.004 seconds)
+   **Total running time of the script:** ( 0 minutes  0.005 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_RBF.py:

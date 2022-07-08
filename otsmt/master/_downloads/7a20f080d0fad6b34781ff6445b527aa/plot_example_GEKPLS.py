@@ -57,4 +57,4 @@ otgekplsgradient = otgekpls.getPredictionDerivativesFunction()
 
 print('Predicted values by GEKPLS:',otgekplsprediction(xv))    
 print('Predicted variances values by GEKPLS:',otgekplsvariances(xv))    
-print('Predicted mean derivatives by GEKPLS:',otgekplsgradient(xv))    
+print('Prediction derivatives by GEKPLS:',otgekplsgradient(xv))    

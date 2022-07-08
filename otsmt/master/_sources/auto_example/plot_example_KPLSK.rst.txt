@@ -108,7 +108,7 @@ Use of KPLSK
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0950408
+       Training - done. Time (sec):  0.1196191
 
 
 
@@ -146,16 +146,16 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001926
+       Predicting - done. Time (sec):  0.0002463
    
-       Prediction time/pt. (sec) :  0.0000963
+       Prediction time/pt. (sec) :  0.0001231
    
     Predicted values by KPLSK:     [ y0      ]
-    0 : [ 1.01015 ]
-    1 : [ 5.00005 ]
+    0 : [ 1.01014 ]
+    1 : [ 5       ]
     Predicted variances values by KPLSK:     [ y0          ]
-    0 : [ 5.21617e-08 ]
-    1 : [ 7.81e-08    ]
+    0 : [ 5.88176e-08 ]
+    1 : [ 9.21894e-08 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -163,9 +163,9 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001621
+       Predicting - done. Time (sec):  0.0002260
    
-       Prediction time/pt. (sec) :  0.0000811
+       Prediction time/pt. (sec) :  0.0001130
    
     ___________________________________________________________________________
    
@@ -174,13 +174,13 @@ Use of KPLSK
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001338
+       Predicting - done. Time (sec):  0.0001776
    
-       Prediction time/pt. (sec) :  0.0000669
+       Prediction time/pt. (sec) :  0.0000888
    
     Predicted mean first derivatives by KPLSK:     [ y0       y1       ]
-    0 : [ 0.199981 1.99995  ]
-    1 : [ 1.99994  3.99993  ]
+    0 : [ 0.199991 1.9999   ]
+    1 : [ 1.99997  3.99987  ]
 
 
 
@@ -188,7 +188,7 @@ Use of KPLSK
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.100 seconds)
+   **Total running time of the script:** ( 0 minutes  0.126 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KPLSK.py:

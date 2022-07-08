@@ -108,7 +108,7 @@ Use of Least Squares Surrogate Model
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0015585
+       Training - done. Time (sec):  0.0014491
 
 
 
@@ -142,13 +142,13 @@ Use of Least Squares Surrogate Model
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001061
+       Predicting - done. Time (sec):  0.0001318
    
-       Prediction time/pt. (sec) :  0.0000530
+       Prediction time/pt. (sec) :  0.0000659
    
     Predicted values by LS:     [ y0      ]
-    0 : [ 66.1614 ]
-    1 : [ 63.6713 ]
+    0 : [ 66.6896 ]
+    1 : [ 65.4479 ]
 
 
 
@@ -156,7 +156,7 @@ Use of Least Squares Surrogate Model
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.005 seconds)
+   **Total running time of the script:** ( 0 minutes  0.006 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_LS.py:

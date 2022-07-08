@@ -47,4 +47,4 @@ otgenngradient = otgenn.getPredictionDerivativesFunction()
 
 
 print('Predicted values by GENN:',otgennprediction(xv))
-print('Predicted mean derivatives by GENN:',otgenngradient(xv))    
+print('Prediction derivatives by GENN:',otgenngradient(xv))    

@@ -105,7 +105,7 @@ Use of KPLS
      Training
    
        Training ...
-       Training - done. Time (sec):  0.0310314
+       Training - done. Time (sec):  0.0403969
 
 
 
@@ -126,7 +126,7 @@ Use of KPLS
 
     print('Predicted values by KPLS:',otkplsprediction(xv))    
     print('Predicted variances values by KPLS:',otkplsvariances(xv))    
-    print('Predicted mean derivatives by KPLS:',otkplsgradient(xv))    
+    print('Prediction derivatives by KPLS:',otkplsgradient(xv))    
 
 
 
@@ -144,16 +144,16 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001948
+       Predicting - done. Time (sec):  0.0002301
    
-       Prediction time/pt. (sec) :  0.0000974
+       Prediction time/pt. (sec) :  0.0001150
    
     Predicted values by KPLS:     [ y0      ]
-    0 : [ 1.01014 ]
-    1 : [ 5.00003 ]
+    0 : [ 1.01025 ]
+    1 : [ 5.00014 ]
     Predicted variances values by KPLS:     [ y0          ]
-    0 : [ 1.03087e-07 ]
-    1 : [ 1.53e-07    ]
+    0 : [ 1.81533e-07 ]
+    1 : [ 1.68457e-07 ]
     ___________________________________________________________________________
    
      Evaluation
@@ -161,9 +161,9 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001736
+       Predicting - done. Time (sec):  0.0002372
    
-       Prediction time/pt. (sec) :  0.0000868
+       Prediction time/pt. (sec) :  0.0001186
    
     ___________________________________________________________________________
    
@@ -172,13 +172,13 @@ Use of KPLS
           # eval points. : 2
    
        Predicting ...
-       Predicting - done. Time (sec):  0.0001409
+       Predicting - done. Time (sec):  0.0001862
    
-       Prediction time/pt. (sec) :  0.0000705
+       Prediction time/pt. (sec) :  0.0000931
    
-    Predicted mean derivatives by KPLS:     [ y0       y1       ]
-    0 : [ 0.200026 1.99989  ]
-    1 : [ 2.00002  3.99988  ]
+    Prediction derivatives by KPLS:     [ y0       y1       ]
+    0 : [ 0.200003 1.99991  ]
+    1 : [ 1.99999  3.99988  ]
 
 
 
@@ -186,7 +186,7 @@ Use of KPLS
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.036 seconds)
+   **Total running time of the script:** ( 0 minutes  0.047 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_KPLS.py:

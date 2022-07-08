@@ -44,4 +44,4 @@ otkplsgradient= otkpls.getPredictionDerivativesFunction()
 
 print('Predicted values by KPLS:',otkplsprediction(xv))    
 print('Predicted variances values by KPLS:',otkplsvariances(xv))    
-print('Predicted mean derivatives by KPLS:',otkplsgradient(xv))    
+print('Prediction derivatives by KPLS:',otkplsgradient(xv))    

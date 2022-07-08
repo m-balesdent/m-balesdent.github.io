@@ -142,21 +142,7 @@ Use of GEKPLS
       warnings.warn(f"Y residual is constant at iteration {k}")
     /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
       warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/scikit_learn-1.1.1-py3.9-linux-x86_64.egg/sklearn/cross_decomposition/_pls.py:304: UserWarning: Y residual is constant at iteration 1
-      warnings.warn(f"Y residual is constant at iteration {k}")
-       Training - done. Time (sec):  0.1292789
+       Training - done. Time (sec):  0.1643131
 
 
 
@@ -177,7 +163,7 @@ Use of GEKPLS
 
     print('Predicted values by GEKPLS:',otgekplsprediction(xv))    
     print('Predicted variances values by GEKPLS:',otgekplsvariances(xv))    
-    print('Predicted mean derivatives by GEKPLS:',otgekplsgradient(xv))    
+    print('Prediction derivatives by GEKPLS:',otgekplsgradient(xv))    
 
 
 
@@ -189,14 +175,14 @@ Use of GEKPLS
  .. code-block:: none
 
     Predicted values by GEKPLS:     [ y0      ]
-    0 : [ 1.00998 ]
-    1 : [ 5       ]
+    0 : [ 1.01002 ]
+    1 : [ 5.00006 ]
     Predicted variances values by GEKPLS:     [ y0          ]
-    0 : [ 1.12564e-09 ]
-    1 : [ 2.10227e-09 ]
-    Predicted mean derivatives by GEKPLS:     [ y0       y1       ]
-    0 : [ 0.199998 2.00001  ]
-    1 : [ 2.00001  4.00001  ]
+    0 : [ 7.36064e-09 ]
+    1 : [ 8.85982e-09 ]
+    Prediction derivatives by GEKPLS:     [ y0       y1       ]
+    0 : [ 0.200014 2.00003  ]
+    1 : [ 2.00001  4.00003  ]
 
 
 
@@ -204,7 +190,7 @@ Use of GEKPLS
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.134 seconds)
+   **Total running time of the script:** ( 0 minutes  0.170 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_example_GEKPLS.py:
